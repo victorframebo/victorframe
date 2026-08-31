@@ -7,7 +7,8 @@
 <meta name="description" content="VictorFrame es el trabajo personal del fotógrafo Víctor: retratos de estudio, sesiones familiares y cobertura de eventos en Santa Cruz de la Sierra, Bolivia. ¿Buscas fotógrafo de bodas? Conoce Camote Weddings.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Fredoka:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+      <link rel="icon" type="image/png" href="favicon.png">
   <style>
     :root{
       --paper:#faf9f6;
@@ -16,7 +17,7 @@
     --ink-soft:#5b574d;
     --line:#e0dbcf;
           --accent:#b3492b;
-          --accent-pale:#efe1d3;
+                  --accent-pale:#efe1d3;
           --max:1220px;
 }
   *{box-sizing:border-box;}
@@ -33,7 +34,7 @@
     *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
 }
   .display{
-        font-family:"Archivo", sans-serif;
+            font-family:"Fredoka", sans-serif;
     font-weight:900;
     line-height:0.92;
     letter-spacing:-0.01em;
@@ -53,12 +54,14 @@
     padding:26px clamp(20px,4vw,60px);
     border-bottom:1px solid var(--line);
 }
-  .logo{
-        font-family:"Archivo", sans-serif;
-    font-weight:700;
-    font-size:1.25rem;
-    letter-spacing:-0.01em;
-}
+    .logo{
+          display:flex; align-items:center; gap:10px;
+              font-family:"Fredoka", sans-serif;
+          font-weight:700;
+          font-size:1.25rem;
+          letter-spacing:-0.01em;
+    }
+      .logo-mark{width:26px; height:26px;}
   .nav-links{
         display:flex; gap:32px;
     font-size:0.92rem;
@@ -75,7 +78,6 @@
     text-decoration:none;
     white-space:nowrap;
     transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-  }
   .pill-solid{background:var(--ink); color:var(--paper);}
   .pill-solid:hover{background:var(--accent); transform:translateY(-1px);}
   .pill-outline{border:1.5px solid var(--ink); color:var(--ink);}
@@ -101,14 +103,14 @@
   .hero-photo-slot{
         display:inline-block;
     vertical-align:middle;
-    width:clamp(90px,13vw,150px);
-    height:clamp(58px,8vw,96px);
+    width:clamp(110px,15vw,180px);
+        height:clamp(70px,10vw,116px);
     margin:0 clamp(10px,1.4vw,18px);
     background:var(--paper-alt);
     border:1px solid var(--line);
     border-radius:8px;
     position:relative;
-    top:-0.05em;
+        top:-0.08em;
 }
   .hero-photo-slot img{
         position:absolute; inset:0;
@@ -317,7 +319,7 @@
     <body>
 
       <nav>
-        <span class="logo">VictorFrame</span>
+        <span class="logo"><img src="vf-mark.png" alt="" class="logo-mark">VictorFrame</span>
         <div class="nav-links">
           <a href="#trabajo">Trabajo</a>
           <a href="#sobre-mi">Sobre mí</a>
