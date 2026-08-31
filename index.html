@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+  <html lang="es-BO">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VictorFrame — Fotógrafo de retrato, familia y eventos en Santa Cruz de la Sierra</title>
+<meta name="description" content="VictorFrame es el trabajo personal del fotógrafo Víctor: retratos de estudio, sesiones familiares y cobertura de eventos en Santa Cruz de la Sierra, Bolivia. ¿Buscas fotógrafo de bodas? Conoce Camote Weddings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#faf9f6;
+      --paper-alt:#f0ede6;
+      --ink:#100f0d;
+    --ink-soft:#5b574d;
+    --line:#e0dbcf;
+          --accent:#b3492b;
+          --accent-pale:#efe1d3;
+          --max:1220px;
+}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+        margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Work Sans", sans-serif;
+    -webkit-font-smoothing:antialiased;
+}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+}
+  .display{
+        font-family:"Archivo", sans-serif;
+    font-weight:900;
+    line-height:0.92;
+    letter-spacing:-0.01em;
+    margin:0;
+}
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{
+        outline:2px solid var(--accent);
+    outline-offset:3px;
+}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 clamp(20px,4vw,60px);}
+
+  /* ---- nav ---- */
+  nav{
+        display:flex; align-items:center; justify-content:space-between;
+    padding:26px clamp(20px,4vw,60px);
+    border-bottom:1px solid var(--line);
+}
+  .logo{
+        font-family:"Archivo", sans-serif;
+    font-weight:700;
+    font-size:1.25rem;
+    letter-spacing:-0.01em;
+}
+  .nav-links{
+        display:flex; gap:32px;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+}
+  .nav-links a{text-decoration:none;}
+  .nav-links a:hover{color:var(--ink);}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px;
+    border-radius:999px;
+    padding:12px 22px;
+    font-size:0.88rem;
+    font-weight:600;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .pill-solid{background:var(--ink); color:var(--paper);}
+  .pill-solid:hover{background:var(--accent); transform:translateY(-1px);}
+  .pill-outline{border:1.5px solid var(--ink); color:var(--ink);}
+  .pill-outline:hover{border-color:var(--accent); color:var(--accent);}
+
+  /* ---- hero ---- */
+  .hero{
+        position:relative;
+    padding:clamp(50px,9vw,90px) 0 0;
+    overflow:hidden;
+}
+  .hero-kicker{
+        display:block;
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+}
+  .hero-kicker em{font-style:normal; color:var(--accent); font-weight:600;}
+  .hero-title{
+        font-size:clamp(3.1rem, 9.5vw, 8.2rem);
+    position:relative;
+}
+  .hero-photo-slot{
+        display:inline-block;
+    vertical-align:middle;
+    width:clamp(90px,13vw,150px);
+    height:clamp(58px,8vw,96px);
+    margin:0 clamp(10px,1.4vw,18px);
+    background:var(--paper-alt);
+    border:1px solid var(--line);
+    border-radius:8px;
+    position:relative;
+    top:-0.05em;
+}
+  .hero-photo-slot img{
+        position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    border-radius:8px;
+    filter:grayscale(1);
+}
+  .hero-location{
+        margin-top:28px;
+    font-size:1.02rem;
+    color:var(--ink-soft);
+    max-width:52ch;
+}
+  .hero-photo-main{
+        margin-top:clamp(32px,5vw,52px);
+    aspect-ratio:16/8;
+    background:
+          repeating-linear-gradient(135deg, #eee9df 0 2px, #f3f0e9 2px 34px);
+                border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+}
+  .hero-photo-main{
+        background-position:center 20%;
+}
+  .hero-photo-main img{
+        width:100%; height:100%;
+    object-fit:cover;
+    object-position:center 20%;
+}
+  .hero-actions{
+        display:flex; flex-wrap:wrap; gap:14px;
+    padding:28px 0 32px;
+}
+
+  /* ---- statement ---- */
+  .statement{
+        padding:clamp(80px,11vw,130px) 0;
+}
+  .statement .wrap{
+    display:grid;
+    grid-template-columns:0.6fr 1.4fr;
+    gap:40px;
+  }
+  .statement-num{
+        font-family:"Archivo", sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    color:var(--accent);
+}
+  .statement p{
+        font-size:clamp(1.35rem,2.6vw,2rem);
+    line-height:1.4;
+    max-width:36ch;
+    color:var(--ink);
+  }
+  .statement p + p{margin-top:1em; color:var(--ink-soft);}
+
+  /* ---- work list ---- */
+  .work{
+        padding:0 0 clamp(60px,8vw,100px);
+}
+  .work-head{
+        padding:clamp(20px,4vw,40px) 0 clamp(50px,7vw,80px);
+    border-top:1px solid var(--line);
+}
+  .work-head h2{
+        font-size:clamp(1.9rem,3.6vw,2.7rem);
+    max-width:18ch;
+}
+  .work-row{
+        display:grid;
+    grid-template-columns:90px 1fr auto;
+    align-items:center;
+    gap:24px;
+    padding:clamp(28px,4vw,42px) 0;
+    border-top:1px solid var(--line);
+    transition:background 0.2s ease;
+}
+  .work-row:last-child{border-bottom:1px solid var(--line);}
+  .work-row:hover{background:var(--paper-alt);}
+  .work-num{
+        font-family:"Archivo", sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    color:var(--ink-soft);
+}
+  .work-name h3{
+        font-family:"Archivo", sans-serif;
+    font-weight:700;
+    font-size:clamp(1.5rem,3.4vw,2.4rem);
+    letter-spacing:-0.01em;
+}
+  .work-name p{
+        margin-top:8px;
+    color:var(--ink-soft);
+    max-width:46ch;
+    font-size:0.98rem;
+}
+  .work-thumb{
+        width:clamp(64px,9vw,110px);
+    height:clamp(64px,9vw,110px);
+    border-radius:8px;
+    background:var(--paper-alt);
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.55rem;
+    color:var(--ink-soft);
+    text-align:center;
+    padding:6px;
+}
+
+  /* ---- about ---- */
+  .about{
+        background:var(--ink);
+    color:var(--paper);
+    padding:clamp(80px,11vw,130px) 0;
+}
+  .about .wrap{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:clamp(40px,6vw,80px);
+    align-items:center;
+  }
+  .about-photo{
+        aspect-ratio:3/4;
+    border:1px solid #3a372f;
+    background:#1c1a16;
+    display:flex; align-items:center; justify-content:center;
+}
+  .about-photo img{width:100%; height:100%; object-fit:cover; object-position:center 15%;}
+  .about-copy .eyebrow{
+    color:#c98a6f; font-size:0.9rem; display:block; margin-bottom:16px;
+    }
+  .about-copy h2{
+        font-size:clamp(1.9rem,3.4vw,2.6rem);
+    max-width:16ch;
+}
+  .about-copy p{
+        margin-top:20px; max-width:48ch; color:#c7c2b6; line-height:1.7; font-size:1.02rem;
+  }
+
+  /* ---- referral ---- */
+  .referral{
+        padding:clamp(70px,9vw,100px) 0;
+    border-bottom:1px solid var(--line);
+  }
+  .referral .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:40px; flex-wrap:wrap;
+    border:1.5px solid var(--ink);
+    border-radius:18px;
+    padding:clamp(32px,5vw,52px);
+  }
+  .referral-copy{max-width:50ch;}
+      .referral-copy .eyebrow{
+    color:var(--accent); font-size:0.88rem; display:block; margin-bottom:10px;
+  }
+  .referral-copy h2{
+        font-family:"Archivo", sans-serif; font-weight:700;
+    font-size:clamp(1.5rem,2.6vw,2.1rem);
+}
+  .referral-copy p{margin-top:12px; color:var(--ink-soft); line-height:1.6;}
+  .referral-cta{flex-shrink:0; display:flex; flex-direction:column; align-items:flex-start; gap:8px;}
+  .referral-note{font-size:0.8rem; color:var(--ink-soft);}
+
+  /* ---- contact ---- */
+  .contact{
+        padding:clamp(90px,13vw,150px) 0 clamp(70px,9vw,100px);
+}
+  .contact .eyebrow{
+    color:var(--accent); font-size:0.9rem; display:block; margin-bottom:18px;
+  }
+  .contact h2.display{
+    font-size:clamp(2.4rem,7vw,5rem);
+    max-width:14ch;
+  }
+  .contact p{
+        margin-top:22px; max-width:46ch; color:var(--ink-soft); font-size:1.05rem; line-height:1.6;
+}
+  .contact .hero-actions{padding-top:34px;}
+
+      /* ---- footer ---- */
+      footer{
+        border-top:1px solid var(--line);
+    padding:30px clamp(20px,4vw,60px);
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:12px;
+    font-size:0.85rem; color:var(--ink-soft);
+}
+  footer a{text-decoration:none; color:var(--ink-soft);}
+  footer a:hover{color:var(--accent);}
+  .footer-links{display:flex; gap:20px;}
+
+  @media (max-width:780px){
+    .statement .wrap{grid-template-columns:1fr;}
+    .work-row{grid-template-columns:50px 1fr; grid-template-areas:"num name" ". thumb";}
+    .work-thumb{display:none;}
+    .about .wrap{grid-template-columns:1fr;}
+    .about-photo{max-width:320px;}
+          .hero-photo-slot{display:none;}
+      }
+</style>
+      </head>
+      <body>
+
+      <nav>
+        <span class="logo">VictorFrame</span>
+        <div class="nav-links">
+          <a href="#trabajo">Trabajo</a>
+          <a href="#sobre-mi">Sobre mí</a>
+        </div>
+        <a class="pill pill-solid" href="#contacto">Escríbeme</a>
+      </nav>
+
+      <header class="hero">
+        <div class="wrap">
+          <span class="hero-kicker">Fotógrafo en Santa Cruz de la Sierra — <em>retrato · familia · eventos</em></span>
+    <h1 class="display hero-title">Fotografía<span class="hero-photo-slot"><img src="images/victor-hero-bw.jpg" alt="Víctor, fotógrafo de VictorFrame"></span>que se siente<br>como el momento.</h1>
+          <p class="hero-location">Soy Víctor. Este es mi trabajo fuera de las bodas — sesiones de estudio, retratos de familia y cobertura de eventos, con la misma exigencia técnica de siempre.</p>
+          <div class="hero-actions">
+            <a class="pill pill-solid" href="#trabajo">Busco un retrato, sesión familiar o evento</a>
+      <a class="pill pill-outline" href="https://camoteweddings.com/fotografo-de-bodas-santa-cruz/" target="_blank" rel="noopener">Busco fotógrafo de bodas →</a>
+    </div>
+    <div class="hero-photo-main"><img src="images/victor-hero-main.jpg" alt="Víctor, fotógrafo en Santa Cruz de la Sierra"></div>
+        </div>
+      </header>
+
+      <section class="statement">
+        <div class="wrap">
+          <span class="statement-num">01 — Forma de trabajar</span>
+    <div>
+      <p>No busco la pose perfecta. Busco el segundo antes o después de ella, cuando la persona deja de posar y simplemente está.</p>
+      <p>Dirección clara, pocas indicaciones, mucha atención — sea un retrato de estudio, una sesión familiar o la cobertura completa de un evento.</p>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="trabajo">
+  <div class="wrap">
+    <div class="work-head">
+      <h2 class="display" style="font-weight:700;">Tres formas de trabajar juntos</h2>
+    </div>
+
+    <div class="work-row">
+      <span class="work-num">01</span>
+      <div class="work-name">
+        <h3>Retrato de estudio</h3>
+        <p>Luz controlada, fondos limpios y dirección para quien nunca ha posado frente a cámara. Ideal para marca personal o retrato individual.</p>
+      </div>
+      <div class="work-thumb">foto retrato</div>
+          </div>
+
+          <div class="work-row">
+            <span class="work-num">02</span>
+            <div class="work-name">
+              <h3>Sesión familiar</h3>
+        <p>En casa, al aire libre o en un lugar con significado. Un archivo de fotos que en diez años siga contando la verdad de ese momento.</p>
+            </div>
+            <div class="work-thumb">foto familia</div>
+          </div>
+
+          <div class="work-row">
+            <span class="work-num">03</span>
+            <div class="work-name">
+              <h3>Cobertura de eventos</h3>
+        <p>Cumpleaños, aniversarios, lanzamientos y reuniones corporativas. Cobertura discreta y entrega editada en pocos días.</p>
+      </div>
+      <div class="work-thumb">foto evento</div>
+    </div>
+        </div>
+      </section>
+
+      <section class="about" id="sobre-mi">
+        <div class="wrap">
+          <div class="about-photo"><img src="images/victor-about.jpg" alt="Víctor apoyado en un granero de madera, sonriendo"></div>
+          <div class="about-copy">
+            <span class="eyebrow">Sobre mí</span>
+            <h2 class="display" style="font-weight:700;">Fotógrafo en Santa Cruz de la Sierra</h2>
+            <p>Llevo años detrás de la cámara, primero documentando bodas y hoy también construyendo VictorFrame: el espacio donde muestro retratos, sesiones familiares y eventos — el trabajo que no encaja dentro de una boda pero que me exige el mismo cuidado.</p>
+            <p>Cada sesión empieza con una conversación corta para entender qué quieres conservar, y termina con una selección editada, no un carrete sin curar.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="referral">
+        <div class="wrap">
+          <div class="referral-copy">
+            <span class="eyebrow">¿Estás planeando tu boda?</span>
+      <h2>Ese trabajo vive en otro lugar</h2>
+      <p>La cobertura de bodas la hago bajo Camote Weddings, con paquetes, portafolio y proceso pensados específicamente para eso.</p>
+          </div>
+          <div class="referral-cta">
+            <a class="pill pill-solid" href="https://camoteweddings.com/fotografo-de-bodas-santa-cruz/" target="_blank" rel="noopener">Ir a Camote Weddings</a>
+            <span class="referral-note">Te lleva a camoteweddings.com</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contacto">
+        <div class="wrap">
+          <span class="eyebrow">Trabajemos juntos</span>
+          <h2 class="display">Cuéntame qué estás buscando.</h2>
+          <p>Escríbeme por WhatsApp con una idea de fecha, lugar y tipo de sesión. Respondo personalmente en menos de 24 horas.</p>
+          <div class="hero-actions">
+            <a class="pill pill-solid" href="https://wa.me/59100000000" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="year"></span> VictorFrame — Víctor, fotógrafo</span>
+        <div class="footer-links">
+          <a href="#trabajo">Trabajo</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </footer>
+
+      <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+  </body>
+  </html>
+  
