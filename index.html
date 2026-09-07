@@ -224,6 +224,25 @@
     text-align:center;
     padding:6px;
 }
+      .work-thumb img{width:100%; height:100%; object-fit:cover; border-radius:8px;}
+
+      /* ---- portfolio ---- */
+      .portfolio{padding:0 0 clamp(60px,8vw,100px);}
+      .portfolio-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:clamp(8px,1.5vw,16px);
+      }
+      .portfolio-grid img{
+            width:100%; height:100%;
+            aspect-ratio:1/1;
+            object-fit:cover;
+            border-radius:8px;
+            display:block;
+      }
+      @media (max-width:780px){
+            .portfolio-grid{grid-template-columns:repeat(2,1fr);}
+      }
 
   /* ---- about ---- */
   .about{
@@ -322,7 +341,7 @@
       <nav>
         <span class="logo"><img src="vf-mark.png" alt="" class="logo-mark">VictorFrame</span>
         <div class="nav-links">
-          <a href="#trabajo">Trabajo</a>
+          <a href="#trabajo">Trabajo</a>    <a href="#portafolio">Portafolio</a>
           <a href="#sobre-mi">Sobre mí</a>
         </div>
         <a class="pill pill-solid" href="#contacto">Escríbeme</a>
@@ -363,7 +382,7 @@
         <h3>Retrato de estudio</h3>
         <p>Luz controlada, fondos limpios y dirección para quien nunca ha posado frente a cámara. Ideal para marca personal o retrato individual.</p>
       </div>
-      <div class="work-thumb">foto retrato</div>
+      <div class="work-thumb"><img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_220/VFR_2168" alt="Retrato de estudio VictorFrame"></div>
           </div>
 
           <div class="work-row">
@@ -372,7 +391,7 @@
               <h3>Sesión familiar</h3>
         <p>En casa, al aire libre o en un lugar con significado. Un archivo de fotos que en diez años siga contando la verdad de ese momento.</p>
             </div>
-            <div class="work-thumb">foto familia</div>
+          <div class="work-thumb"><img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_220/VFR_2546" alt="Sesión familiar VictorFrame"></div>
           </div>
 
           <div class="work-row">
@@ -381,18 +400,37 @@
               <h3>Cobertura de eventos</h3>
         <p>Cumpleaños, aniversarios, lanzamientos y reuniones corporativas. Cobertura discreta y entrega editada en pocos días.</p>
       </div>
-      <div class="work-thumb">foto evento</div>
+            <div class="work-thumb"><img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_220/VFR_2318" alt="Cobertura de eventos VictorFrame"></div>
     </div>
         </div>
       </section>
 
+          <section class="portfolio" id="portafolio">
+                  <div class="wrap">
+                            <div class="work-head">
+                                        <h2 class="display" style="font-weight:700;">Portafolio</h2>
+                            </div>
+                            <div class="portfolio-grid">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2528" alt="Retrato en exteriores, sesión de pareja">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2502" alt="Sesión familiar en jardín">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_3062" alt="Retrato en exteriores">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2361" alt="Sesión familiar al aire libre">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_3122" alt="Retrato de pareja en la naturaleza">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2462" alt="Sesión familiar en exteriores">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2164" alt="Retrato en jardín botánico">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2904" alt="Sesión familiar al atardecer">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2249" alt="Retrato en exteriores VictorFrame">
+                            </div>
+                  </div>
+          </section>
+
       <section class="about" id="sobre-mi">
         <div class="wrap">
           <div class="about-photo"><img src="IMG_1277.jpg" alt="Víctor apoyado en un granero de madera, sonriendo"></div>
-          <div class="about-copy">
+                    <div class="about-copy">
             <span class="eyebrow">Sobre mí</span>
-            <h2 class="display" style="font-weight:700;">Fotógrafo en Santa Cruz de la Sierra</h2>
-            <p>Llevo años detrás de la cámara, primero documentando bodas y hoy también construyendo VictorFrame: el espacio donde muestro retratos, sesiones familiares y eventos — el trabajo que no encaja dentro de una boda pero que me exige el mismo cuidado.</p>
+                              <h2 class="display" style="font-weight:700;">Fotógrafo en Santa Cruz de la Sierra</h2>
+          <p>Llevo años detrás de la cámara, primero documentando bodas y hoy también construyendo VictorFrame: el espacio donde muestro retratos, sesiones familiares y eventos — el trabajo que no encaja dentro de una boda pero que me exige el mismo cuidado.</p>
             <p>Cada sesión empieza con una conversación corta para entender qué quieres conservar, y termina con una selección editada, no un carrete sin curar.</p>
           </div>
         </div>
