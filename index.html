@@ -226,6 +226,24 @@
 }
       .work-thumb img{width:100%; height:100%; object-fit:cover; border-radius:8px;}
 
+      /* ---- studio sub-gallery ---- */
+      .studio-gallery{
+            grid-column:1/-1;
+            display:grid;
+            grid-template-columns:repeat(6,1fr);
+            gap:8px;
+            margin-top:20px;
+      }
+      .studio-gallery img{
+            width:100%; aspect-ratio:1/1;
+            object-fit:cover;
+            border-radius:6px;
+            display:block;
+      }
+      @media (max-width:780px){
+            .studio-gallery{grid-template-columns:repeat(3,1fr);}
+      }
+
       /* ---- portfolio ---- */
       .portfolio{padding:0 0 clamp(60px,8vw,100px);}
       .portfolio-grid{
@@ -383,6 +401,14 @@
         <p>Luz controlada, fondos limpios y dirección para quien nunca ha posado frente a cámara. Ideal para marca personal o retrato individual.</p>
       </div>
       <div class="work-thumb"><img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_220/VFR_2168" alt="Retrato de estudio VictorFrame"></div>
+              <div class="studio-gallery">
+                          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_300/VFR_9643" alt="Retrato de estudio, embarazo">
+                          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_300/VFR_9663" alt="Retrato de estudio, embarazo">
+                          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_300/VFR_9651" alt="Retrato de estudio, embarazo">
+                          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_300/VFR_9567" alt="Retrato de estudio, embarazo">
+                          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_300/VFR_9633" alt="Retrato de estudio, embarazo">
+                          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_300/VFR_9582" alt="Retrato de estudio, embarazo">
+              </div>
           </div>
 
           <div class="work-row">
