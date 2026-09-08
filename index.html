@@ -226,22 +226,57 @@
 }
       .work-thumb img{width:100%; height:100%; object-fit:cover; border-radius:8px;}
 
-      /* ---- studio sub-gallery ---- */
-      .studio-gallery{
+  /* ---- studio carousel ---- */
+      .studio-carousel{
             grid-column:1/-1;
-            display:grid;
-            grid-template-columns:repeat(6,1fr);
-            gap:8px;
+            overflow:hidden;
             margin-top:20px;
+            -webkit-mask-image:linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+            mask-image:linear-gradient(to right, transparent, black 4%, black 96%, transparent);
       }
-      .studio-gallery img{
-            width:100%; aspect-ratio:1/1;
-            object-fit:cover;
+      .studio-track{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            width:max-content;
+            animation:studio-scroll 34s linear infinite;
+      }
+      .studio-carousel:hover .studio-track{animation-play-state:paused;}
+      .studio-track img{
+            height:130px;
+            width:auto;
             border-radius:6px;
             display:block;
+            flex-shrink:0;
+            cursor:zoom-in;
+            transition:transform 0.2s ease;
+      }
+      .studio-track img:hover{transform:translateY(-3px);}
+      @keyframes studio-scroll{
+            from{transform:translateX(0);}
+            to{transform:translateX(-50%);}
       }
       @media (max-width:780px){
-            .studio-gallery{grid-template-columns:repeat(3,1fr);}
+            .studio-track img{height:90px;}
+      }
+
+      /* ---- lightbox ---- */
+      .lightbox{
+            position:fixed; inset:0;
+            background:rgba(16,15,13,0.94);
+            display:none;
+            align-items:center; justify-content:center;
+            z-index:999;
+            padding:24px;
+            cursor:zoom-out;
+      }
+      .lightbox.active{display:flex;}
+      .lightbox img{
+            max-width:92vw; max-height:92vh;
+            width:auto; height:auto;
+            object-fit:contain;
+            border-radius:6px;
+            display:block;
       }
 
       /* ---- portfolio ---- */
@@ -400,15 +435,37 @@
         <h3>Retrato de estudio</h3>
         <p>Luz controlada, fondos limpios y dirección para quien nunca ha posado frente a cámara. Ideal para marca personal o retrato individual.</p>
       </div>
-      <div class="work-thumb"><img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_220/VFR_2168" alt="Retrato de estudio VictorFrame"></div>
-              <div class="studio-gallery">
-                          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_300/VFR_9643" alt="Retrato de estudio, embarazo">
-                          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_300/VFR_9663" alt="Retrato de estudio, embarazo">
-                          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_300/VFR_9651" alt="Retrato de estudio, embarazo">
-                          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_300/VFR_9567" alt="Retrato de estudio, embarazo">
-                          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_300/VFR_9633" alt="Retrato de estudio, embarazo">
-                          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_300/VFR_9582" alt="Retrato de estudio, embarazo">
-              </div>
+            <div class="work-thumb"><img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_220/VFR_9601" alt="Retrato de estudio VictorFrame"></div>
+                        <div class="studio-carousel">
+                                      <div class="studio-track">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9643" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9663" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9651" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9567" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9633" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9582" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9601" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9618" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9510" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9556" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9468" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9463" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9483" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9643" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9663" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9651" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9567" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9633" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9582" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9601" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9618" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9510" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9556" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9468" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9463" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                                      <img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_260/VFR_9483" alt="Retrato de estudio, embarazo" onclick="document.getElementById('lightbox-img').src=this.src.replace('h_260','h_1400');document.getElementById('lightbox').classList.add('active')">
+                                      </div>
+                        </div>
           </div>
 
           <div class="work-row">
@@ -498,6 +555,10 @@
       <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+      <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+          <img id="lightbox-img" src="" alt="Foto ampliada">
+      </div>
 
   </body>
   </html>
