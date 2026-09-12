@@ -41,7 +41,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Fredoka:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
       <link rel="icon" type="image/png" href="favicon.png">
   <style>
     :root{
@@ -68,7 +68,7 @@
     *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
 }
   .display{
-            font-family:"Fredoka", sans-serif;
+            font-family:"Archivo", sans-serif;
     font-weight:900;
     line-height:0.92;
     letter-spacing:-0.01em;
@@ -85,12 +85,12 @@
   /* ---- nav ---- */
   nav{
         display:flex; align-items:center; justify-content:space-between;
-    padding:26px clamp(20px,4vw,60px);
+    flex-wrap:wrap; row-gap:14px; padding:20px clamp(20px,4vw,60px);
     border-bottom:1px solid var(--line);
 }
     .logo{
           display:flex; align-items:center; gap:10px;
-              font-family:"Fredoka", sans-serif;
+              font-family:"Archivo", sans-serif;
           font-weight:700;
           font-size:1.25rem;
           letter-spacing:-0.01em;
@@ -104,13 +104,13 @@
   .nav-links a{text-decoration:none;}
   .nav-links a:hover{color:var(--ink);}
   .pill{
-    display:inline-flex; align-items:center; gap:8px;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
     border-radius:999px;
     padding:12px 22px;
     font-size:0.88rem;
     font-weight:600;
     text-decoration:none;
-    white-space:nowrap;
+    text-align:center; white-space:normal;
     transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease;
   }
   .pill-solid{background:var(--ink); color:var(--paper);}
@@ -132,7 +132,7 @@
 }
   .hero-kicker em{font-style:normal; color:var(--accent); font-weight:600;}
   .hero-title{
-        font-size:clamp(3.1rem, 9.5vw, 8.2rem);
+        font-size:clamp(2.3rem, 9.5vw, 8.2rem); overflow-wrap:break-word;
     position:relative;
 }
   .hero-photo-slot{
@@ -152,7 +152,7 @@
     width:100%; height:100%;
     object-fit:cover;
     border-radius:8px;
-    filter:grayscale(1);
+    object-position:center 18%; filter:grayscale(1);
 }
   .hero-location{
         margin-top:28px;
@@ -175,7 +175,7 @@
   .hero-photo-main img{
         width:100%; height:100%;
     object-fit:cover;
-    object-position:center 20%;
+    object-position:60% 18%;
 }
   .hero-actions{
         display:flex; flex-wrap:wrap; gap:14px;
@@ -349,7 +349,7 @@
     background:#1c1a16;
     display:flex; align-items:center; justify-content:center;
 }
-  .about-photo img{width:100%; height:100%; object-fit:cover; object-position:center 15%;}
+  .about-photo img{width:100%; height:100%; object-fit:cover; object-position:58% 12%;}
   .about-copy .eyebrow{
     color:#c98a6f; font-size:0.9rem; display:block; margin-bottom:16px;
     }
@@ -414,11 +414,11 @@
   .footer-links{display:flex; gap:20px;}
 
   @media (max-width:780px){
-    .statement .wrap{grid-template-columns:1fr;}
+    nav{justify-content:center; text-align:center;} .logo{order:1; flex:1 1 auto;} nav > .pill{order:2;} .nav-links{order:3; width:100%; justify-content:center; gap:20px; flex-wrap:wrap;} .statement .wrap{grid-template-columns:1fr;}
     .work-row{grid-template-columns:50px 1fr; grid-template-areas:"num name" ". thumb";}
     .work-thumb{display:none;}
     .about .wrap{grid-template-columns:1fr;}
-    .about-photo{max-width:320px;}
+    .about-photo{max-width:320px; margin:0 auto;} .hero-actions .pill{width:100%;} footer{justify-content:center; text-align:center;}
           .hero-photo-slot{display:none;}
   }
     </style>
@@ -437,7 +437,7 @@
       <header class="hero">
         <div class="wrap">
           <span class="hero-kicker">Fotógrafo en Santa Cruz de la Sierra — <em>retrato · familia · eventos</em></span>
-    <h1 class="display hero-title">Fotografía<span class="hero-photo-slot"><img src="01.jpg" alt="Víctor, fotógrafo de VictorFrame"></span>que se siente<br>como el momento.</h1>
+    <h1 class="display hero-title">Fotografía <span class="hero-photo-slot"><img src="01.jpg" alt="Víctor, fotógrafo de VictorFrame"></span> que se siente<br>como el momento.</h1>
           <p class="hero-location">Soy Víctor. Este es mi trabajo fuera de las bodas — sesiones de estudio, retratos de familia y cobertura de eventos, con la misma exigencia técnica de siempre.</p>
           <div class="hero-actions">
             <a class="pill pill-solid" href="#trabajo">Busco un retrato, sesión familiar o evento</a>
@@ -508,7 +508,7 @@
               <h3>Sesión familiar</h3>
         <p>En casa, al aire libre o en un lugar con significado. Un archivo de fotos que en diez años siga contando la verdad de ese momento.</p>
             </div>
-          <div class="work-thumb"><img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_220/VFR_2546" alt="Sesión familiar VictorFrame"></div>
+          <div class="work-thumb"><img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_220,h_220,c_fill,g_faces/VFR_2546" alt="Sesión familiar VictorFrame"></div>
           </div>
 
           <div class="work-row">
@@ -517,7 +517,7 @@
               <h3>Cobertura de eventos</h3>
         <p>Cumpleaños, aniversarios, lanzamientos y reuniones corporativas. Cobertura discreta y entrega editada en pocos días.</p>
       </div>
-            <div class="work-thumb"><img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_220/VFR_2318" alt="Cobertura de eventos VictorFrame"></div>
+            <div class="work-thumb"><img src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_220,h_220,c_fill,g_auto/VFR_2318" alt="Cobertura de eventos VictorFrame"></div>
     </div>
         </div>
       </section>
@@ -528,15 +528,15 @@
                                         <h2 class="display" style="font-weight:700;">Portafolio</h2>
                             </div>
                             <div class="portfolio-grid">
-                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2528" alt="Retrato en exteriores, sesión de pareja">
-                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2502" alt="Sesión familiar en jardín">
-                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_3062" alt="Retrato en exteriores">
-                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2361" alt="Sesión familiar al aire libre">
-                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_3122" alt="Retrato de pareja en la naturaleza">
-                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2462" alt="Sesión familiar en exteriores">
-                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2164" alt="Retrato en jardín botánico">
-                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2904" alt="Sesión familiar al atardecer">
-                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500/VFR_2249" alt="Retrato en exteriores VictorFrame">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_faces/VFR_2528" alt="Retrato en exteriores, sesión de pareja">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_faces/VFR_2502" alt="Sesión familiar en jardín">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_face/VFR_3062" alt="Retrato en exteriores">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_faces/VFR_2361" alt="Sesión familiar al aire libre">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_faces/VFR_3122" alt="Retrato de pareja en la naturaleza">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_faces/VFR_2462" alt="Sesión familiar en exteriores">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_face/VFR_2164" alt="Retrato en jardín botánico">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_faces/VFR_2904" alt="Sesión familiar al atardecer">
+                                        <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_face/VFR_2249" alt="Retrato en exteriores VictorFrame">
                             </div>
                   </div>
           </section>
