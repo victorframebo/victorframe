@@ -52,8 +52,11 @@
   .mdf-wall { height: 220px; box-sizing: border-box; padding: 22px; border-radius: 6px; background: linear-gradient(180deg, #EFE7D6, #E1D6BC); display: flex; align-items: center; justify-content: center; }
   .mdf-wall img.mdf-panel { width: 100%; height: 100%; border-radius: 2px; box-shadow: 8px 10px 20px rgba(20,52,43,0.35); }
   .note { padding: 6px 24px 0; font-size: 12px; font-style: italic; color: #8A8F87; }
-  .extra { padding: 20px 24px 0; font-size: 14px; }
-  .extra strong { color: var(--green); }
+  .extras { padding: 32px 24px 0; }
+  .extras table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .extras th { text-align: left; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--green); padding: 0 0 8px; border-bottom: 1px solid var(--line); }
+  .extras td { padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--ink); }
+  .extras td:last-child, .extras th:last-child { text-align: right; white-space: nowrap; padding-left: 12px; }
   .cta { margin-top: 28px; padding: 24px; background: var(--gold); text-align: center; }
   .cta p { margin: 0; color: var(--green); font-size: 18px; font-weight: 700; font-family: 'Playfair Display', Georgia, serif; }
   .contract { padding: 14px 24px 32px; text-align: center; font-size: 12px; letter-spacing: 0.5px; color: var(--muted); }
@@ -141,7 +144,16 @@
   </div>
   <div class="note">Imágenes de muestra, referenciales.</div>
 
-  <div class="extra"><strong>Extra opcional:</strong> USB físico con fotos + video + galería en línea — Bs.100</div>
+  <div class="extras">
+    <span class="label">Extras opcionales</span>
+    <table>
+      <tr><th>Extra</th><th>Precio</th></tr>
+      <tr><td>USB físico (fotos + video + galería en línea)</td><td>Bs.100</td></tr>
+      <tr><td>Impresión extra 10x15</td><td>Bs.3.5</td></tr>
+      <tr><td>Ampliación en MDF 30x40cm</td><td>Bs.120</td></tr>
+      <tr><td>Ampliación en MDF 28x28cm adicional</td><td>Bs.80</td></tr>
+    </table>
+  </div>
 
   <div class="cta">
     <p>Reserva tu paquete antes de la graduación y asegura tu lugar — escríbenos para coordinar la entrega.</p>
