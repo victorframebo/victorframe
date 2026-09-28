@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fotografía de Graduación — VictorFrame</title>
+<meta name="description" content="Paquetes de fotografía y video de graduación: Esencial, Recuerdo y Premium. Reserva tu cobertura y asegura el recuerdo de este momento único.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --green: #14342B;
+    --gold: #C9A24B;
+    --cream: #FAF8F3;
+    --line: #E3DDCE;
+    --ink: #4A4F4B;
+    --muted: #6B7068;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--cream); font-family: 'Work Sans', system-ui, sans-serif; color: var(--ink); }
+  .serif { font-family: 'Playfair Display', Georgia, serif; }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  .hero { position: relative; width: 100%; height: 62vw; max-height: 620px; min-height: 320px; overflow: hidden; }
+  .hero img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,52,43,0) 40%, rgba(15,36,29,0.92) 100%); }
+  .hero-text { position: absolute; left: 24px; right: 24px; bottom: 28px; z-index: 1; }
+  .eyebrow { color: var(--gold); font-size: 14px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; }
+  h1 { margin: 6px 0 0; color: var(--cream); font-size: clamp(28px, 6vw, 56px); font-weight: 700; line-height: 1.1; }
+  .section { padding: 32px 24px 0; }
+  .tagline { color: var(--green); font-size: clamp(18px, 3vw, 26px); line-height: 1.5; font-style: italic; margin: 0; }
+  .body-text { color: #3A3F3B; font-size: 16px; line-height: 1.6; margin: 0; }
+  .why { margin: 32px 24px 0; padding: 24px; background: var(--green); border-radius: 4px; }
+  .why-title { color: var(--gold); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+  .why-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px 24px; margin-top: 14px; }
+  .why-grid div { color: var(--cream); font-size: 15px; line-height: 1.5; }
+  .label { color: var(--green); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+  .cards { display: flex; gap: 16px; padding: 16px 24px 0; flex-wrap: wrap; }
+  .card { flex: 1 1 260px; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+  .card .name { font-size: 22px; font-weight: 700; color: var(--green); }
+  .card .price { font-size: 30px; font-weight: 700; color: var(--green); }
+  .card hr { border: none; height: 1px; background: var(--line); width: 100%; margin: 0; }
+  .card p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--ink); }
+  .card.premium { background: var(--green); border-color: var(--gold); position: relative; }
+  .card.premium .name, .card.premium p { color: var(--cream); }
+  .card.premium .price { color: var(--gold); }
+  .card.premium hr { background: rgba(250,248,243,0.2); }
+  .badge { position: absolute; top: -13px; left: 20px; background: var(--gold); color: var(--green); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; }
+  .samples { display: flex; gap: 16px; padding: 16px 24px 0; flex-wrap: wrap; }
+  .sample { flex: 1 1 220px; display: flex; flex-direction: column; gap: 8px; }
+  .sample img { width: 100%; height: 220px; object-fit: cover; border-radius: 6px; display: block; }
+  .sample span { text-align: center; font-size: 13px; color: var(--ink); }
+  .note { padding: 6px 24px 0; font-size: 12px; font-style: italic; color: #8A8F87; }
+  .extra { padding: 20px 24px 0; font-size: 14px; }
+  .extra strong { color: var(--green); }
+  .cta { margin-top: 28px; padding: 24px; background: var(--gold); text-align: center; }
+  .cta p { margin: 0; color: var(--green); font-size: 18px; font-weight: 700; font-family: 'Playfair Display', Georgia, serif; }
+  .contract { padding: 14px 24px 32px; text-align: center; font-size: 12px; letter-spacing: 0.5px; color: var(--muted); }
+  @media (min-width: 700px) {
+    .section { padding-left: 64px; padding-right: 64px; }
+    .why { margin-left: 64px; margin-right: 64px; }
+    .cards, .samples { padding-left: 64px; padding-right: 64px; }
+    .note, .extra, .contract { padding-left: 64px; padding-right: 64px; }
+    .hero-text { left: 64px; right: 64px; bottom: 40px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <img src="images/hero.jpg" alt="Estudiante de graduación con banda de promoción y bandera del colegio" width="1066" height="1600" decoding="async" fetchpriority="high">
+    <div class="hero-text">
+      <div class="eyebrow">Promoción 2026</div>
+      <h1>Fotografía de Graduación</h1>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="tagline">La graduación se vive una sola vez. Estas fotos y este video son el recuerdo que tu familia va a mirar por años — elige el paquete que mejor cuente tu historia.</p>
+  </div>
+
+  <div class="section" style="padding-top:16px;">
+    <p class="body-text">Un cambio de etapa como este no se repite. Acá quedan los abrazos, las caras de orgullo de tu familia y el cierre de un ciclo — momentos que en un par de años vas a querer volver a ver, no solo tener guardados en un celular que se pierde o se rompe.</p>
+  </div>
+
+  <div class="why">
+    <div class="why-title">Por qué elegirnos</div>
+    <div class="why-grid">
+      <div>— Cobertura profesional de todo el evento</div>
+      <div>— Video + fotos digitales ilimitadas</div>
+      <div>— Impresas y ampliaciones listas para enmarcar</div>
+      <div>— Entrega organizada y a tiempo</div>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:32px;">
+    <span class="label">Paquetes</span>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <span class="name serif">Esencial</span>
+      <span class="price serif">Bs.70</span>
+      <hr>
+      <p>Digitales ilimitadas + video + 10 impresas 10x15</p>
+    </div>
+    <div class="card">
+      <span class="name serif">Recuerdo</span>
+      <span class="price serif">Bs.100</span>
+      <hr>
+      <p>Digitales ilimitadas + video + 15 impresas 10x15</p>
+    </div>
+    <div class="card premium">
+      <span class="badge">Más elegido</span>
+      <span class="name serif">Premium</span>
+      <span class="price serif">Bs.160</span>
+      <hr>
+      <p>Digitales ilimitadas + video + 25 impresas 10x15 + 1 ampliación en cuadro 28x28</p>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:32px;">
+    <span class="label">Ejemplos de entregables</span>
+  </div>
+  <div class="samples">
+    <div class="sample">
+      <img src="images/cuadro.jpg" alt="Ejemplo de cuadro de madera 28x28cm con foto de graduación" width="900" height="900" loading="lazy" decoding="async">
+      <span>Cuadro 28x28</span>
+    </div>
+    <div class="sample">
+      <img src="images/usb.jpg" alt="Ejemplo de USB personalizado con nombre Sofía Ramírez" width="900" height="900" loading="lazy" decoding="async">
+      <span>USB personalizado</span>
+    </div>
+    <div class="sample">
+      <img src="images/impresas.jpg" alt="Ejemplo de fotos impresas 10x15" width="900" height="900" loading="lazy" decoding="async">
+      <span>Fotos impresas 10x15</span>
+    </div>
+  </div>
+  <div class="note">Imágenes de muestra, referenciales.</div>
+
+  <div class="extra"><strong>Extra opcional:</strong> USB físico con fotos + video + galería en línea — Bs.100</div>
+
+  <div class="cta">
+    <p>Reserva tu paquete antes de la graduación y asegura tu lugar — escríbenos para coordinar la entrega.</p>
+  </div>
+
+  <div class="contract">Todo el servicio se realiza bajo contrato.</div>
+
+</div>
+</body>
+</html>
