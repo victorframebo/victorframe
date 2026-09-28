@@ -421,9 +421,27 @@
     .about-photo{max-width:320px; margin:0 auto;} .hero-actions .pill{width:100%;} footer{justify-content:center; text-align:center;}
           .hero-photo-slot{display:none;}
   }
+
+  /* ---- seasonal banner ---- */
+  .season-banner{
+        display:flex; align-items:center; justify-content:center; gap:10px;
+    flex-wrap:wrap; text-align:center;
+    background:var(--ink); color:var(--paper);
+    padding:12px clamp(20px,4vw,60px);
+    font-size:0.9rem;
+  }
+  .season-banner a{
+        color:var(--paper);
+    font-weight:600;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .season-banner a:hover{color:var(--accent-pale);}
     </style>
   </head>
     <body>
+
+      <a class="season-banner" href="navidad/index.html">🎄 Sesiones de Navidad ya disponibles — reserva tu fecha de diciembre →</a>
 
       <nav>
         <span class="logo"><img src="vf-mark.png" alt="" class="logo-mark">VictorFrame</span>
