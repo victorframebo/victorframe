@@ -123,10 +123,15 @@
   .badge { position: absolute; top: -13px; left: 20px; background: var(--gold); color: var(--night); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; }
   .samples { display: flex; gap: 16px; padding: 16px 24px 0; flex-wrap: wrap; }
   .sample { flex: 1 1 220px; display: flex; flex-direction: column; gap: 8px; }
-  .sample img { width: 100%; height: 220px; object-fit: cover; border-radius: 6px; display: block; }
+  .sample-photo { width: 100%; height: 220px; border-radius: 6px; overflow: hidden; background: linear-gradient(135deg, #2E1D12, #1B120C); display: flex; align-items: center; justify-content: center; }
+  .sample-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .sample-photo.no-photo img { display: none; }
+  .sample-photo.no-photo::after { content: attr(data-placeholder); font-size: 12px; font-style: italic; color: var(--gold-soft); text-align: center; padding: 0 18px; }
   .sample span { text-align: center; font-size: 13px; color: var(--ink); }
   .mdf-wall { height: 220px; box-sizing: border-box; padding: 22px; border-radius: 6px; background: linear-gradient(180deg, #EFE7D6, #E1D6BC); display: flex; align-items: center; justify-content: center; }
   .mdf-wall img.mdf-panel { width: 100%; height: 100%; border-radius: 2px; box-shadow: 8px 10px 20px rgba(27,18,12,0.35); }
+  .mdf-wall.no-photo img.mdf-panel { display: none; }
+  .mdf-wall.no-photo::after { content: attr(data-placeholder); font-size: 12px; font-style: italic; color: var(--muted); text-align: center; padding: 0 18px; }
   .note { padding: 6px 24px 0; font-size: 12px; font-style: italic; color: #8A8F87; }
   .extras { padding: 40px 24px 0; }
   .extras table { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -164,7 +169,7 @@
   </nav>
 
   <div class="hero">
-    <img src="images/hero.jpg" alt="Familia posando junto al árbol de Navidad" width="1600" height="1200" decoding="async" fetchpriority="high">
+    <img src="images/hero.jpg" alt="Familia posando junto al árbol de Navidad" width="1600" height="1200" decoding="async" fetchpriority="high" onerror="this.style.display='none'">
     <div class="hero-text">
       <div class="eyebrow">Navidad 2026</div>
       <h1 class="hero-title">Sesiones de<br><span>Navidad</span> en familia</h1>
@@ -262,17 +267,21 @@
     </div>
     <div class="samples">
       <div class="sample">
-        <div class="mdf-wall">
-          <img class="mdf-panel" src="images/cuadro.jpg" alt="Ejemplo de ampliación en MDF 28x28cm con foto navideña familiar" width="900" height="900" loading="lazy" decoding="async">
+        <div class="mdf-wall" data-placeholder="Foto próximamente">
+          <img class="mdf-panel" src="images/cuadro.jpg" alt="Ejemplo de ampliación en MDF 28x28cm con foto navideña familiar" width="900" height="900" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('no-photo')">
         </div>
         <span>Ampliación en MDF 28x28</span>
       </div>
       <div class="sample">
-        <img src="images/tarjeta.jpg" alt="Ejemplo de tarjeta navideña impresa con foto familiar" width="900" height="900" loading="lazy" decoding="async">
+        <div class="sample-photo" data-placeholder="Foto próximamente">
+          <img src="images/tarjeta.jpg" alt="Ejemplo de tarjeta navideña impresa con foto familiar" width="900" height="900" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('no-photo')">
+        </div>
         <span>Tarjeta navideña</span>
       </div>
       <div class="sample">
-        <img src="images/impresas.jpg" alt="Ejemplo de fotos impresas 10x15" width="900" height="900" loading="lazy" decoding="async">
+        <div class="sample-photo" data-placeholder="Foto próximamente">
+          <img src="images/impresas.jpg" alt="Ejemplo de fotos impresas 10x15" width="900" height="900" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('no-photo')">
+        </div>
         <span>Fotos impresas 10x15</span>
       </div>
     </div>
