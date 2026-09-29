@@ -6,12 +6,14 @@
 <title>Sesiones de Navidad — VictorFrame</title>
 <meta name="description" content="Sesiones de fotos de Navidad en familia: paquetes con fotos digitales, impresas y tarjetas navideñas. Reserva tu fecha antes de que se llenen los cupos de diciembre.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=Playfair+Display:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=Playfair+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
 <style>
   :root {
-    --green: #1B3A2F;
-    --red: #A32F2F;
+    --night: #1B120C;
+    --night-2: #2E1D12;
+    --maroon: #7A2020;
     --gold: #C9A24B;
+    --gold-soft: #E4C989;
     --cream: #FAF8F3;
     --line: #E3DDCE;
     --ink: #4A4F4B;
@@ -21,77 +23,116 @@
   body { margin: 0; background: var(--cream); font-family: 'Work Sans', system-ui, sans-serif; color: var(--ink); }
   .serif { font-family: 'Playfair Display', Georgia, serif; }
   .wrap { max-width: 1080px; margin: 0 auto; }
-  .hero { position: relative; width: 100%; height: 62vw; max-height: 620px; min-height: 320px; overflow: hidden; }
-  .hero img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; }
-  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(27,58,47,0) 40%, rgba(15,30,24,0.92) 100%); }
-  .hero-text { position: absolute; left: 24px; right: 24px; bottom: 28px; z-index: 1; }
-  .eyebrow { color: var(--gold); font-size: 14px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; }
-  h1 { margin: 6px 0 0; color: var(--cream); font-size: clamp(28px, 6vw, 56px); font-weight: 700; line-height: 1.1; }
+
+  /* ---- site nav ---- */
+  nav.site-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; row-gap: 14px;
+    padding: 18px 24px;
+    background: var(--night);
+  }
+  .logo { display: flex; align-items: center; gap: 10px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--cream); text-decoration: none; letter-spacing: -0.01em; }
+  .logo-mark { width: 22px; height: 22px; filter: invert(1) brightness(1.6); }
+  .nav-links { display: flex; gap: 26px; font-size: 0.85rem; letter-spacing: 0.4px; }
+  .nav-links a { color: #C9BFAF; text-decoration: none; }
+  .nav-links a:hover { color: var(--gold-soft); }
+  .nav-links a.current { color: var(--gold); font-weight: 600; }
+  .pill { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 10px 20px; font-size: 0.82rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+  .pill-solid { background: var(--gold); color: var(--night); }
+  .pill-solid:hover { background: var(--gold-soft); }
+  @media (max-width: 780px) {
+    nav.site-nav { justify-content: center; text-align: center; }
+    .logo { order: 1; flex: 1 1 auto; }
+    nav.site-nav > .pill { order: 2; }
+    .nav-links { order: 3; width: 100%; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  }
+
+  /* ---- hero ---- */
+  .hero {
+    position: relative; width: 100%;
+    height: 76vw; max-height: 680px; min-height: 460px;
+    overflow: hidden; background: var(--night);
+  }
+  .hero img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; opacity: 0.85; }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(27,18,12,0.55) 0%, rgba(27,18,12,0.35) 35%, rgba(20,13,8,0.9) 100%);
+  }
+  .hero-text { position: absolute; left: 24px; right: 24px; top: 50%; transform: translateY(-50%); z-index: 1; }
+  .eyebrow { color: var(--gold); font-size: 13px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; }
+  h1.hero-title {
+    margin: 10px 0 0; color: var(--cream);
+    font-family: 'Playfair Display', Georgia, serif; font-weight: 800;
+    font-size: clamp(30px, 6.5vw, 62px); line-height: 1.08;
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .hero-title span { color: var(--gold); }
+  .hero-sub { margin-top: 14px; max-width: 46ch; color: #E7DFD3; font-size: 15px; line-height: 1.6; }
+  .hero-facts { margin-top: 22px; display: flex; flex-direction: column; gap: 8px; }
+  .hero-facts div { color: #D8CFC0; font-size: 13.5px; display: flex; gap: 10px; align-items: baseline; }
+  .hero-facts div::before { content: "❄"; color: var(--gold); flex-shrink: 0; }
+  .hero-cta { display: inline-block; margin-top: 26px; background: var(--gold); color: var(--night); text-decoration: none; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; text-transform: uppercase; padding: 15px 30px; border-radius: 2px; }
+  .hero-cta:hover { background: var(--gold-soft); }
+
+  /* wavy divider */
+  .wave-divider { position: absolute; left: 0; right: 0; bottom: -1px; line-height: 0; z-index: 1; }
+  .wave-divider svg { width: 100%; height: 70px; display: block; }
+
   .section { padding: 32px 24px 0; }
-  .tagline { color: var(--green); font-size: clamp(18px, 3vw, 26px); line-height: 1.5; font-style: italic; margin: 0; }
+  .tagline { color: var(--maroon); font-size: clamp(18px, 3vw, 26px); line-height: 1.5; font-style: italic; margin: 0; font-family: 'Playfair Display', Georgia, serif; }
   .body-text { color: #3A3F3B; font-size: 16px; line-height: 1.6; margin: 0; }
-  .why { margin: 32px 24px 0; padding: 24px; background: var(--green); border-radius: 4px; }
+
+  /* ---- steps ---- */
+  .steps-head { padding: 44px 24px 6px; text-align: center; }
+  .steps-eyebrow { color: var(--maroon); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+  .steps-head h2 { margin: 8px 0 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(22px, 4vw, 32px); color: var(--night); }
+  .steps { margin: 28px 24px 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; }
+  .step-row { display: flex; align-items: center; gap: 18px; padding: 18px 22px; border-bottom: 1px solid var(--line); }
+  .step-row:last-child { border-bottom: none; }
+  .step-num { font-family: 'Playfair Display', Georgia, serif; font-weight: 800; color: var(--maroon); font-size: 22px; width: 34px; flex-shrink: 0; }
+  .step-title { font-size: 14.5px; color: var(--ink); line-height: 1.4; }
+
+  .why { margin: 40px 24px 0; padding: 26px; background: var(--night); border-radius: 6px; border: 1px solid var(--maroon); }
   .why-title { color: var(--gold); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
   .why-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px 24px; margin-top: 14px; }
-  .why-grid div { color: var(--cream); font-size: 15px; line-height: 1.5; }
-  .label { color: var(--green); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+  .why-grid div { color: #E7DFD3; font-size: 15px; line-height: 1.5; }
+  .label { color: var(--maroon); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
   .cards { display: flex; gap: 16px; padding: 16px 24px 0; flex-wrap: wrap; }
   .card { flex: 1 1 260px; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 24px; display: flex; flex-direction: column; gap: 14px; }
-  .card .name { font-size: 22px; font-weight: 700; color: var(--green); }
-  .card .price { font-size: 30px; font-weight: 700; color: var(--green); }
+  .card .name { font-size: 22px; font-weight: 700; color: var(--night); }
+  .card .price { font-size: 30px; font-weight: 700; color: var(--maroon); }
   .card hr { border: none; height: 1px; background: var(--line); width: 100%; margin: 0; }
   .card p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--ink); }
-  .card.premium { background: var(--green); border-color: var(--gold); position: relative; }
+  .card.premium { background: var(--night); border-color: var(--gold); position: relative; }
   .card.premium .name, .card.premium p { color: var(--cream); }
   .card.premium .price { color: var(--gold); }
   .card.premium hr { background: rgba(250,248,243,0.2); }
-  .badge { position: absolute; top: -13px; left: 20px; background: var(--gold); color: var(--green); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; }
+  .badge { position: absolute; top: -13px; left: 20px; background: var(--gold); color: var(--night); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; }
   .samples { display: flex; gap: 16px; padding: 16px 24px 0; flex-wrap: wrap; }
   .sample { flex: 1 1 220px; display: flex; flex-direction: column; gap: 8px; }
   .sample img { width: 100%; height: 220px; object-fit: cover; border-radius: 6px; display: block; }
   .sample span { text-align: center; font-size: 13px; color: var(--ink); }
   .mdf-wall { height: 220px; box-sizing: border-box; padding: 22px; border-radius: 6px; background: linear-gradient(180deg, #EFE7D6, #E1D6BC); display: flex; align-items: center; justify-content: center; }
-  .mdf-wall img.mdf-panel { width: 100%; height: 100%; border-radius: 2px; box-shadow: 8px 10px 20px rgba(27,58,47,0.35); }
+  .mdf-wall img.mdf-panel { width: 100%; height: 100%; border-radius: 2px; box-shadow: 8px 10px 20px rgba(27,18,12,0.35); }
   .note { padding: 6px 24px 0; font-size: 12px; font-style: italic; color: #8A8F87; }
-  .extras { padding: 32px 24px 0; }
+  .extras { padding: 40px 24px 0; }
   .extras table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  .extras th { text-align: left; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--green); padding: 0 0 8px; border-bottom: 1px solid var(--line); }
+  .extras th { text-align: left; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--night); padding: 0 0 8px; border-bottom: 1px solid var(--line); }
   .extras td { padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--ink); }
   .extras td:last-child, .extras th:last-child { text-align: right; white-space: nowrap; padding-left: 12px; }
-  .cta { margin-top: 28px; padding: 24px; background: var(--gold); text-align: center; }
-  .cta p { margin: 0; color: var(--green); font-size: 18px; font-weight: 700; font-family: 'Playfair Display', Georgia, serif; }
-  .cta a.btn { display: inline-block; margin-top: 14px; background: var(--red); color: var(--cream); text-decoration: none; font-weight: 600; font-size: 14px; padding: 12px 26px; border-radius: 999px; }
-  .contract { padding: 14px 24px 32px; text-align: center; font-size: 12px; letter-spacing: 0.5px; color: var(--muted); }
+  .cta { margin-top: 32px; padding: 30px 24px; background: var(--night); text-align: center; }
+  .cta p { margin: 0; color: var(--gold-soft); font-size: 18px; font-weight: 700; font-family: 'Playfair Display', Georgia, serif; }
+  .cta a.btn { display: inline-block; margin-top: 16px; background: var(--gold); color: var(--night); text-decoration: none; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; text-transform: uppercase; padding: 14px 28px; border-radius: 2px; }
+  .cta a.btn:hover { background: var(--gold-soft); }
+  .contract { padding: 14px 24px 36px; text-align: center; font-size: 12px; letter-spacing: 0.5px; color: var(--muted); }
 
-  /* ---- site nav (consistente con la home) ---- */
-  nav.site-nav {
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; row-gap: 14px;
-    padding: 20px 24px;
-    border-bottom: 1px solid var(--line);
-    max-width: 1080px; margin: 0 auto;
-  }
-  .logo { display: flex; align-items: center; gap: 10px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--green); text-decoration: none; letter-spacing: -0.01em; }
-  .logo-mark { width: 24px; height: 24px; }
-  .nav-links { display: flex; gap: 28px; font-size: 0.9rem; color: var(--muted); }
-  .nav-links a { color: var(--muted); text-decoration: none; }
-  .nav-links a:hover { color: var(--green); }
-  .nav-links a.current { color: var(--red); font-weight: 600; }
-  .pill { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 10px 20px; font-size: 0.85rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
-  .pill-solid { background: var(--green); color: var(--cream); }
-  .pill-solid:hover { background: var(--red); }
-  @media (max-width: 780px) {
-    nav.site-nav { justify-content: center; text-align: center; }
-    .logo { order: 1; flex: 1 1 auto; }
-    nav.site-nav > .pill { order: 2; }
-    .nav-links { order: 3; width: 100%; justify-content: center; gap: 18px; flex-wrap: wrap; }
-  }
   @media (min-width: 700px) {
     .section { padding-left: 64px; padding-right: 64px; }
     .why { margin-left: 64px; margin-right: 64px; }
+    .steps { margin-left: 64px; margin-right: 64px; }
     .cards, .samples { padding-left: 64px; padding-right: 64px; }
     .note, .extras, .contract { padding-left: 64px; padding-right: 64px; }
-    .hero-text { left: 64px; right: 64px; bottom: 40px; }
+    .hero-text { left: 64px; right: 64px; }
     nav.site-nav { padding-left: 64px; padding-right: 64px; }
   }
 </style>
@@ -109,98 +150,120 @@
     <a class="pill pill-solid" href="https://wa.me/59171015521" target="_blank" rel="noopener">Escríbeme</a>
   </nav>
 
-<div class="wrap">
-
   <div class="hero">
-    <img src="images/hero.jpg" alt="Familia posando junto al árbol de Navidad" width="1066" height="1600" decoding="async" fetchpriority="high">
+    <img src="images/hero.jpg" alt="Familia posando junto al árbol de Navidad" width="1600" height="1200" decoding="async" fetchpriority="high">
     <div class="hero-text">
       <div class="eyebrow">Navidad 2026</div>
-      <h1>Sesiones de Navidad en familia</h1>
-    </div>
-  </div>
-
-  <div class="section">
-    <p class="tagline">Diciembre pasa rápido. Estas fotos son el recuerdo que vas a mandar en la tarjeta de fin de año y a mirar cada Navidad que viene — elige el paquete que mejor cuente tu historia.</p>
-  </div>
-
-  <div class="section" style="padding-top:16px;">
-    <p class="body-text">Entre las compras, la cena y las visitas, este es el momento para juntar a toda la familia frente a la cámara — con las luces, el árbol y esa sensación de diciembre que no se repite igual el próximo año.</p>
-  </div>
-
-  <div class="why">
-    <div class="why-title">Por qué elegirnos</div>
-    <div class="why-grid">
-      <div>— Sesión guiada, relajada y rápida — ideal para niños</div>
-      <div>— Fotos digitales editadas en todos los paquetes</div>
-      <div>— Tarjetas navideñas e impresas listas para regalar</div>
-      <div>— Entrega a tiempo para la Navidad</div>
-    </div>
-  </div>
-
-  <div class="section" style="padding-top:32px;">
-    <span class="label">Paquetes</span>
-  </div>
-  <div class="cards">
-    <div class="card">
-      <span class="name serif">Mini Sesión</span>
-      <span class="price serif">Bs.___</span>
-      <hr>
-      <p>20 minutos de sesión + 10 fotos digitales editadas + galería en línea</p>
-    </div>
-    <div class="card">
-      <span class="name serif">Familiar</span>
-      <span class="price serif">Bs.___</span>
-      <hr>
-      <p>40 minutos de sesión + 20 fotos digitales + 10 tarjetas navideñas impresas</p>
-    </div>
-    <div class="card premium">
-      <span class="badge">Más elegido</span>
-      <span class="name serif">Premium</span>
-      <span class="price serif">Bs.___</span>
-      <hr>
-      <p>Sesión de 1 hora + fotos digitales ilimitadas + 20 tarjetas navideñas + 1 ampliación en cuadro 28x28</p>
-    </div>
-  </div>
-
-  <div class="section" style="padding-top:32px;">
-    <span class="label">Ejemplos de entregables</span>
-  </div>
-  <div class="samples">
-    <div class="sample">
-      <div class="mdf-wall">
-        <img class="mdf-panel" src="images/cuadro.jpg" alt="Ejemplo de ampliación en MDF 28x28cm con foto navideña familiar" width="900" height="900" loading="lazy" decoding="async">
+      <h1 class="hero-title">Sesiones de<br><span>Navidad</span> en familia</h1>
+      <p class="hero-sub">Fotos que van a mandar en la tarjeta de fin de año — y que van a mirar cada Navidad que viene.</p>
+      <div class="hero-facts">
+        <div>Cupos limitados — diciembre 2026</div>
+        <div>Sesiones de 20 a 60 minutos según el paquete</div>
       </div>
-      <span>Ampliación en MDF 28x28</span>
+      <a class="hero-cta" href="https://wa.me/59171015521" target="_blank" rel="noopener">Reservar mi fecha</a>
     </div>
-    <div class="sample">
-      <img src="images/tarjeta.jpg" alt="Ejemplo de tarjeta navideña impresa con foto familiar" width="900" height="900" loading="lazy" decoding="async">
-      <span>Tarjeta navideña</span>
-    </div>
-    <div class="sample">
-      <img src="images/impresas.jpg" alt="Ejemplo de fotos impresas 10x15" width="900" height="900" loading="lazy" decoding="async">
-      <span>Fotos impresas 10x15</span>
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,60 C 240,110 480,0 720,30 C 960,60 1200,110 1440,50 L1440,100 L0,100 Z" fill="#FAF8F3"></path></svg>
     </div>
   </div>
-  <div class="note">Imágenes de muestra, referenciales.</div>
 
-  <div class="extras">
-    <span class="label">Extras opcionales</span>
-    <table>
-      <tr><th>Extra</th><th>Precio</th></tr>
-      <tr><td>USB físico (fotos + galería en línea)</td><td>Bs.___</td></tr>
-      <tr><td>Impresión extra 10x15</td><td>Bs.___</td></tr>
-      <tr><td>Tarjeta navideña adicional (paquete de 10)</td><td>Bs.___</td></tr>
-      <tr><td>Ampliación en MDF 28x28cm adicional</td><td>Bs.___</td></tr>
-    </table>
+  <div class="wrap">
+
+    <div class="section">
+      <p class="tagline">Diciembre pasa rápido. Elige el paquete que mejor cuente la historia de tu familia este año.</p>
+    </div>
+
+    <div class="section" style="padding-top:16px;">
+      <p class="body-text">Entre las compras, la cena y las visitas, este es el momento para juntar a toda la familia frente a la cámara — con las luces, el árbol y esa sensación de diciembre que no se repite igual el próximo año.</p>
+    </div>
+
+    <div class="steps-head">
+      <span class="steps-eyebrow">Cómo funciona</span>
+      <h2 class="serif">De la reserva a tus fotos impresas</h2>
+    </div>
+    <div class="steps">
+      <div class="step-row"><span class="step-num serif">01</span><span class="step-title">Reservas tu fecha y eliges el paquete por WhatsApp</span></div>
+      <div class="step-row"><span class="step-num serif">02</span><span class="step-title">Coordinamos locación: en tu casa, un estudio o un lugar con luces navideñas</span></div>
+      <div class="step-row"><span class="step-num serif">03</span><span class="step-title">Sesión guiada de 20 a 60 minutos, relajada y a ritmo de niños</span></div>
+      <div class="step-row"><span class="step-num serif">04</span><span class="step-title">Seleccionas tus fotos favoritas de la galería en línea</span></div>
+      <div class="step-row"><span class="step-num serif">05</span><span class="step-title">Edición profesional de cada foto elegida</span></div>
+      <div class="step-row"><span class="step-num serif">06</span><span class="step-title">Entrega digital, tarjetas e impresas a tiempo para la Navidad</span></div>
+    </div>
+
+    <div class="why">
+      <div class="why-title">Por qué elegirnos</div>
+      <div class="why-grid">
+        <div>— Sesión guiada, relajada y rápida — ideal para niños</div>
+        <div>— Fotos digitales editadas en todos los paquetes</div>
+        <div>— Tarjetas navideñas e impresas listas para regalar</div>
+        <div>— Entrega a tiempo para la Navidad</div>
+      </div>
+    </div>
+
+    <div class="section" style="padding-top:40px;">
+      <span class="label">Paquetes</span>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="name serif">Mini Sesión</span>
+        <span class="price serif">Bs.___</span>
+        <hr>
+        <p>20 minutos de sesión + 10 fotos digitales editadas + galería en línea</p>
+      </div>
+      <div class="card">
+        <span class="name serif">Familiar</span>
+        <span class="price serif">Bs.___</span>
+        <hr>
+        <p>40 minutos de sesión + 20 fotos digitales + 10 tarjetas navideñas impresas</p>
+      </div>
+      <div class="card premium">
+        <span class="badge">Más elegido</span>
+        <span class="name serif">Premium</span>
+        <span class="price serif">Bs.___</span>
+        <hr>
+        <p>Sesión de 1 hora + fotos digitales ilimitadas + 20 tarjetas navideñas + 1 ampliación en cuadro 28x28</p>
+      </div>
+    </div>
+
+    <div class="section" style="padding-top:40px;">
+      <span class="label">Ejemplos de entregables</span>
+    </div>
+    <div class="samples">
+      <div class="sample">
+        <div class="mdf-wall">
+          <img class="mdf-panel" src="images/cuadro.jpg" alt="Ejemplo de ampliación en MDF 28x28cm con foto navideña familiar" width="900" height="900" loading="lazy" decoding="async">
+        </div>
+        <span>Ampliación en MDF 28x28</span>
+      </div>
+      <div class="sample">
+        <img src="images/tarjeta.jpg" alt="Ejemplo de tarjeta navideña impresa con foto familiar" width="900" height="900" loading="lazy" decoding="async">
+        <span>Tarjeta navideña</span>
+      </div>
+      <div class="sample">
+        <img src="images/impresas.jpg" alt="Ejemplo de fotos impresas 10x15" width="900" height="900" loading="lazy" decoding="async">
+        <span>Fotos impresas 10x15</span>
+      </div>
+    </div>
+    <div class="note">Imágenes de muestra, referenciales.</div>
+
+    <div class="extras">
+      <span class="label">Extras opcionales</span>
+      <table>
+        <tr><th>Extra</th><th>Precio</th></tr>
+        <tr><td>USB físico (fotos + galería en línea)</td><td>Bs.___</td></tr>
+        <tr><td>Impresión extra 10x15</td><td>Bs.___</td></tr>
+        <tr><td>Tarjeta navideña adicional (paquete de 10)</td><td>Bs.___</td></tr>
+        <tr><td>Ampliación en MDF 28x28cm adicional</td><td>Bs.___</td></tr>
+      </table>
+    </div>
+
+    <div class="cta">
+      <p>Los cupos de diciembre son limitados — reserva tu fecha antes de que se llenen.</p>
+      <a class="btn" href="https://wa.me/59171015521" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+    </div>
+
+    <div class="contract">Todo el servicio se realiza bajo contrato.</div>
+
   </div>
-
-  <div class="cta">
-    <p>Los cupos de diciembre son limitados — reserva tu fecha antes de que se llenen.</p>
-    <a class="btn" href="https://wa.me/59171015521" target="_blank" rel="noopener">Reservar por WhatsApp</a>
-  </div>
-
-  <div class="contract">Todo el servicio se realiza bajo contrato.</div>
-
-</div>
 </body>
 </html>
