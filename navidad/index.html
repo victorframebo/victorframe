@@ -129,6 +129,10 @@
   .card.premium .price { color: var(--gold); }
   .card.premium hr { background: rgba(250,248,243,0.2); }
   .badge { position: absolute; top: -13px; left: 20px; background: var(--gold); color: var(--night); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; }
+  .card-cta { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; background: var(--gold); color: var(--night); text-decoration: none; font-weight: 700; font-size: 12.5px; letter-spacing: 0.5px; text-transform: uppercase; padding: 12px 16px; border-radius: 4px; text-align: center; }
+  .card-cta:hover { background: var(--gold-soft); }
+  .deposit-note { margin: 22px 24px 0; padding: 20px 24px; border: 1.5px solid var(--gold); border-radius: 6px; background: #fff; font-size: 14px; color: var(--ink); line-height: 1.6; }
+  .deposit-note strong { color: var(--maroon); }
   .samples { display: flex; gap: 16px; padding: 16px 24px 0; flex-wrap: wrap; }
   .sample { flex: 1 1 220px; display: flex; flex-direction: column; gap: 8px; }
   .sample-photo { width: 100%; height: 220px; border-radius: 6px; overflow: hidden; background: linear-gradient(135deg, #2E1D12, #1B120C); display: flex; align-items: center; justify-content: center; }
@@ -146,6 +150,17 @@
   .extras th { text-align: left; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--night); padding: 0 0 8px; border-bottom: 1px solid var(--line); }
   .extras td { padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--ink); }
   .extras td:last-child, .extras th:last-child { text-align: right; white-space: nowrap; padding-left: 12px; }
+  /* ---- faq ---- */
+  .faq-head { padding: 44px 24px 6px; text-align: center; }
+  .faq { margin: 28px 24px 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item summary { padding: 18px 22px; cursor: pointer; font-weight: 600; color: var(--night); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 15px; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; font-size: 20px; line-height: 1; color: var(--maroon); flex-shrink: 0; }
+  .faq-item[open] summary::after { content: "\2212"; }
+  .faq-item p { margin: 0; padding: 0 22px 18px; font-size: 14px; color: var(--ink); line-height: 1.6; }
+
   .cta { margin-top: 32px; padding: 30px 24px; background: var(--night); text-align: center; }
   .cta p { margin: 0; color: var(--gold-soft); font-size: 18px; font-weight: 700; font-family: 'Playfair Display', Georgia, serif; }
   .cta a.btn { display: inline-block; margin-top: 16px; background: var(--gold); color: var(--night); text-decoration: none; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; text-transform: uppercase; padding: 14px 28px; border-radius: 2px; }
@@ -251,25 +266,33 @@
       <span class="label">Paquetes</span>
     </div>
     <div class="cards">
-      <div class="card">
+      <div class="card" data-package="Mini Sesión">
         <span class="name serif">Mini Sesión</span>
         <span class="price serif">Bs.___</span>
         <hr>
         <p>20 minutos de sesión + 10 fotos digitales editadas + galería en línea</p>
+        <a class="card-cta" href="https://wa.me/59171015521" onclick="return reservarPaquete(this)">Reservar este paquete</a>
       </div>
-      <div class="card">
+      <div class="card" data-package="Familiar">
         <span class="name serif">Familiar</span>
         <span class="price serif">Bs.___</span>
         <hr>
         <p>40 minutos de sesión + 20 fotos digitales + 10 tarjetas navideñas impresas</p>
+        <a class="card-cta" href="https://wa.me/59171015521" onclick="return reservarPaquete(this)">Reservar este paquete</a>
       </div>
-      <div class="card premium">
+      <div class="card premium" data-package="Premium">
         <span class="badge">Más elegido</span>
         <span class="name serif">Premium</span>
         <span class="price serif">Bs.___</span>
         <hr>
         <p>Sesión de 1 hora + fotos digitales ilimitadas + 20 tarjetas navideñas + 1 ampliación en cuadro 28x28</p>
+        <a class="card-cta" href="https://wa.me/59171015521" onclick="return reservarPaquete(this)">Reservar este paquete</a>
       </div>
+    </div>
+
+    <div class="deposit-note">
+      <strong>Reserva de fecha:</strong> se aparta con el 70% del valor del paquete elegido. El 30% restante se paga el día de la sesión.<br>
+      Todo el servicio se realiza bajo contrato, para tu tranquilidad y la nuestra.
     </div>
 
     <div class="section" style="padding-top:40px;">
@@ -308,6 +331,37 @@
       </table>
     </div>
 
+    <div class="faq-head">
+      <span class="steps-eyebrow">Preguntas frecuentes</span>
+      <h2 class="serif">Todo lo que necesitas saber antes de reservar</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>¿Dónde se hacen las sesiones?</summary>
+        <p>En tu casa, en un estudio o en un lugar con luces navideñas — lo coordinamos juntos según el paquete y lo que prefieras.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto dura la sesión?</summary>
+        <p>Entre 20 y 60 minutos, según el paquete que elijas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo reservo mi fecha?</summary>
+        <p>Apartas tu fecha con el 70% del valor del paquete elegido. El 30% restante se paga el día de la sesión.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿El servicio está garantizado con contrato?</summary>
+        <p>Sí, todo el servicio se realiza bajo contrato — para tu seguridad y la nuestra.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuándo recibo mis fotos?</summary>
+        <p>La entrega se coordina a tiempo para la Navidad, según la fecha en la que reserves tu sesión.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo agregar más impresas o tarjetas?</summary>
+        <p>Sí, revisa la tabla de extras opcionales más arriba para sumar impresas, tarjetas o ampliaciones adicionales.</p>
+      </details>
+    </div>
+
     <div class="cta">
       <p>Los cupos de diciembre son limitados — reserva tu fecha antes de que se llenen.</p>
       <a class="btn" href="https://wa.me/59171015521" target="_blank" rel="noopener">Reservar por WhatsApp</a>
@@ -316,5 +370,16 @@
     <div class="contract">Todo el servicio se realiza bajo contrato.</div>
 
   </div>
+
+  <script>
+    function reservarPaquete(el) {
+      var card = el.closest('.card');
+      var nombre = card.getAttribute('data-package');
+      var precio = card.querySelector('.price').textContent.trim();
+      var mensaje = 'Hola! Quiero reservar el paquete ' + nombre + ' (' + precio + ') de Sesiones de Navidad.';
+      window.open('https://wa.me/59171015521?text=' + encodeURIComponent(mensaje), '_blank', 'noopener');
+      return false;
+    }
+  </script>
 </body>
 </html>
