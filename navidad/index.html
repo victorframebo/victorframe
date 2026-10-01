@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sesiones de Navidad — VictorFrame</title>
-<meta name="description" content="Sesiones de fotos de Navidad en familia: paquetes con fotos digitales, impresas y tarjetas navideñas. Reserva tu fecha antes de que se llenen los cupos de diciembre.">
+<meta name="description" content="Sesiones de fotos de Navidad en estudio, con decoración minimalista y elegante. Paquetes con fotos digitales e impresas. Reserva tu fecha antes de que se llenen los cupos de diciembre.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=Playfair+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
 <style>
@@ -149,9 +149,16 @@
   .sample-photo.no-photo::after { content: attr(data-placeholder); font-size: 12px; font-style: italic; color: var(--gold-soft); text-align: center; padding: 0 18px; }
   .sample span { text-align: center; font-size: 13px; color: var(--ink); }
   .mdf-wall { height: 220px; box-sizing: border-box; padding: 22px; border-radius: 6px; background: linear-gradient(180deg, #EFE7D6, #E1D6BC); display: flex; align-items: center; justify-content: center; }
-  .mdf-wall img.mdf-panel { width: 100%; height: 100%; border-radius: 2px; box-shadow: 8px 10px 20px rgba(27,18,12,0.35); }
+  .mdf-wall img.mdf-panel { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; box-shadow: 8px 10px 20px rgba(27,18,12,0.35); }
   .mdf-wall.no-photo img.mdf-panel { display: none; }
   .mdf-wall.no-photo::after { content: attr(data-placeholder); font-size: 12px; font-style: italic; color: var(--muted); text-align: center; padding: 0 18px; }
+
+  /* ---- print stack mockup ---- */
+  .print-stack { position: relative; width: 100%; height: 220px; border-radius: 6px; background: linear-gradient(135deg, #EFE7D6, #E1D6BC); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .print-photo { position: absolute; width: 112px; background: #fff; padding: 5px 5px 16px; box-shadow: 0 10px 18px rgba(27,18,12,0.35); border-radius: 2px; }
+  .print-photo img { width: 100%; aspect-ratio: 2/3; object-fit: cover; display: block; border-radius: 1px; }
+  .print-photo.back { transform: rotate(-9deg) translate(-20px, 8px); z-index: 1; }
+  .print-photo.front { transform: rotate(7deg) translate(16px, -6px); z-index: 2; }
   .note { padding: 6px 24px 0; font-size: 12px; font-style: italic; color: #8A8F87; }
   .extras { padding: 40px 24px 0; }
   .extras table { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -209,7 +216,7 @@
       <p class="hero-sub">Fotos que van a mandar en la tarjeta de fin de año — y que van a mirar cada Navidad que viene.</p>
       <div class="hero-facts">
         <div>Cupos limitados — diciembre 2026</div>
-        <div>Sesiones de 20 a 60 minutos según el paquete</div>
+        <div>Sesiones de 30 o 45 minutos en nuestro estudio</div>
       </div>
       <a class="hero-cta" href="https://wa.me/59171015521" target="_blank" rel="noopener">Reservar mi fecha</a>
     </div>
@@ -253,11 +260,11 @@
     </div>
     <div class="steps">
       <div class="step-row"><span class="step-num serif">01</span><span class="step-title">Reservas tu fecha y eliges el paquete por WhatsApp</span></div>
-      <div class="step-row"><span class="step-num serif">02</span><span class="step-title">Coordinamos locación: en tu casa, un estudio o un lugar con luces navideñas</span></div>
+      <div class="step-row"><span class="step-num serif">02</span><span class="step-title">Sesión en nuestro estudio, ya ambientado con una decoración navideña minimalista y elegante</span></div>
       <div class="step-row"><span class="step-num serif">03</span><span class="step-title">Sesión guiada de 30 o 45 minutos, relajada y a ritmo de niños</span></div>
       <div class="step-row"><span class="step-num serif">04</span><span class="step-title">Seleccionas tus fotos favoritas de la galería en línea</span></div>
       <div class="step-row"><span class="step-num serif">05</span><span class="step-title">Edición profesional de cada foto elegida</span></div>
-      <div class="step-row"><span class="step-num serif">06</span><span class="step-title">Entrega digital, tarjetas e impresas a tiempo para la Navidad</span></div>
+      <div class="step-row"><span class="step-num serif">06</span><span class="step-title">Entrega digital e impresas a tiempo para la Navidad</span></div>
     </div>
 
     <div class="why">
@@ -265,7 +272,7 @@
       <div class="why-grid">
         <div>— Sesión guiada, relajada y rápida — ideal para niños</div>
         <div>— Fotos digitales editadas en todos los paquetes</div>
-        <div>— Tarjetas navideñas e impresas listas para regalar</div>
+        <div>— Estudio ya decorado, minimalista y elegante — no preparas nada</div>
         <div>— Entrega a tiempo para la Navidad</div>
       </div>
     </div>
@@ -303,14 +310,14 @@
         <span class="name serif">Sesión Extendida</span>
         <span class="price serif">Bs.500</span>
         <hr>
-        <p>45 minutos de sesión + 20 fotos digitales + 10 tarjetas navideñas impresas</p>
+        <p>45 minutos de sesión + 20 fotos digitales editadas + galería en línea</p>
         <a class="card-cta" href="https://wa.me/59171015521" onclick="return reservarPaquete(this)">Reservar este paquete</a>
       </div>
     </div>
 
     <div class="deposit-note">
       <strong>Preventa de octubre — primera oleada:</strong> estos precios (Bs.250 Mini Sesión / Bs.500 Sesión Extendida) son solo para fechas reservadas en octubre, con cupos limitados.
-      Una vez que se llenen esos cupos, el precio de la Mini Sesión sube a Bs.300, y las reservas de último momento quedan en Bs.450. Reserva ahora para asegurar el precio de preventa.<br>
+      Una vez que se llenen esos cupos, el precio sube: la Mini Sesión a Bs.300 (Bs.450 en reservas de último momento) y la Sesión Extendida a Bs.650. Reserva ahora para asegurar el precio de preventa.<br>
       <strong>Reserva de fecha:</strong> se aparta con el 70% del valor del paquete elegido. El 30% restante se paga el día de la sesión. Todo el servicio se realiza bajo contrato, para tu tranquilidad y la nuestra.
     </div>
 
@@ -320,19 +327,14 @@
     <div class="samples">
       <div class="sample">
         <div class="mdf-wall" data-placeholder="Foto próximamente">
-          <img class="mdf-panel" src="images/cuadro.jpg" alt="Ejemplo de ampliación en MDF 28x28cm con foto navideña" width="900" height="900" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('no-photo')">
+          <img class="mdf-panel" src="images/cuadro.jpg" alt="Ejemplo de ampliación en MDF 28x28cm con foto navideña" width="900" height="600" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('no-photo')">
         </div>
         <span>Ampliación en MDF 28x28</span>
       </div>
       <div class="sample">
-        <div class="sample-photo" data-placeholder="Foto próximamente">
-          <img src="images/tarjeta.jpg" alt="Ejemplo de tarjeta navideña impresa" width="900" height="900" loading="lazy" decoding="async" style="object-position:center 20%;" onerror="this.parentElement.classList.add('no-photo')">
-        </div>
-        <span>Tarjeta navideña</span>
-      </div>
-      <div class="sample">
-        <div class="sample-photo" data-placeholder="Foto próximamente">
-          <img src="images/impresas.jpg" alt="Ejemplo de fotos impresas 10x15" width="900" height="900" loading="lazy" decoding="async" style="object-position:center 15%;" onerror="this.parentElement.classList.add('no-photo')">
+        <div class="print-stack">
+          <div class="print-photo back"><img src="images/impresas-2.jpg" alt="Ejemplo de foto impresa 10x15" loading="lazy" decoding="async" onerror="this.closest('.print-photo').style.display='none'"></div>
+          <div class="print-photo front"><img src="images/impresas.jpg" alt="Ejemplo de foto impresa 10x15" loading="lazy" decoding="async" onerror="this.closest('.print-photo').style.display='none'"></div>
         </div>
         <span>Fotos impresas 10x15</span>
       </div>
@@ -345,7 +347,6 @@
         <tr><th>Extra</th><th>Precio</th></tr>
         <tr><td>USB físico (fotos + galería en línea)</td><td>Bs.___</td></tr>
         <tr><td>Impresión extra 10x15</td><td>Bs.___</td></tr>
-        <tr><td>Tarjeta navideña adicional (paquete de 10)</td><td>Bs.___</td></tr>
         <tr><td>Ampliación en MDF 28x28cm adicional</td><td>Bs.___</td></tr>
       </table>
     </div>
@@ -357,11 +358,11 @@
     <div class="faq">
       <details class="faq-item">
         <summary>¿Dónde se hacen las sesiones?</summary>
-        <p>En tu casa, en un estudio o en un lugar con luces navideñas — lo coordinamos juntos según el paquete y lo que prefieras.</p>
+        <p>En nuestro estudio, ya ambientado para la temporada con una decoración navideña minimalista y elegante — no necesitas preparar nada.</p>
       </details>
       <details class="faq-item">
         <summary>¿Cuánto dura la sesión?</summary>
-        <p>Entre 20 y 60 minutos, según el paquete que elijas.</p>
+        <p>30 minutos en la Mini Sesión, o 45 minutos en la Sesión Extendida.</p>
       </details>
       <details class="faq-item">
         <summary>¿Cómo reservo mi fecha?</summary>
@@ -376,8 +377,8 @@
         <p>La entrega se coordina a tiempo para la Navidad, según la fecha en la que reserves tu sesión.</p>
       </details>
       <details class="faq-item">
-        <summary>¿Puedo agregar más impresas o tarjetas?</summary>
-        <p>Sí, revisa la tabla de extras opcionales más arriba para sumar impresas, tarjetas o ampliaciones adicionales.</p>
+        <summary>¿Puedo agregar más impresas?</summary>
+        <p>Sí, revisa la tabla de extras opcionales más arriba para sumar impresas o ampliaciones adicionales.</p>
       </details>
     </div>
 
