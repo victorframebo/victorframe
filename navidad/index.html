@@ -119,7 +119,7 @@
   .why-grid div { color: #E7DFD3; font-size: 15px; line-height: 1.5; }
   .label { color: var(--maroon); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
   .cards { display: flex; gap: 16px; padding: 16px 24px 0; flex-wrap: wrap; }
-  .card { flex: 1 1 260px; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+  .card { position: relative; flex: 1 1 260px; background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 24px; display: flex; flex-direction: column; gap: 14px; }
   .card .name { font-size: 22px; font-weight: 700; color: var(--night); }
   .card .price { font-size: 30px; font-weight: 700; color: var(--maroon); }
   .card hr { border: none; height: 1px; background: var(--line); width: 100%; margin: 0; }
@@ -133,6 +133,14 @@
   .card-cta:hover { background: var(--gold-soft); }
   .deposit-note { margin: 22px 24px 0; padding: 20px 24px; border: 1.5px solid var(--gold); border-radius: 6px; background: #fff; font-size: 14px; color: var(--ink); line-height: 1.6; }
   .deposit-note strong { color: var(--maroon); }
+
+  /* ---- gallery (año pasado) ---- */
+  .gallery-head { padding: 44px 24px 6px; text-align: center; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 24px 24px 0; }
+  .gallery-grid a { display: block; aspect-ratio: 1/1; border-radius: 6px; overflow: hidden; }
+  .gallery-grid img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s ease; }
+  .gallery-grid a:hover img { transform: scale(1.05); }
+  @media (max-width: 700px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
   .samples { display: flex; gap: 16px; padding: 16px 24px 0; flex-wrap: wrap; }
   .sample { flex: 1 1 220px; display: flex; flex-direction: column; gap: 8px; }
   .sample-photo { width: 100%; height: 220px; border-radius: 6px; overflow: hidden; background: linear-gradient(135deg, #2E1D12, #1B120C); display: flex; align-items: center; justify-content: center; }
@@ -246,7 +254,7 @@
     <div class="steps">
       <div class="step-row"><span class="step-num serif">01</span><span class="step-title">Reservas tu fecha y eliges el paquete por WhatsApp</span></div>
       <div class="step-row"><span class="step-num serif">02</span><span class="step-title">Coordinamos locación: en tu casa, un estudio o un lugar con luces navideñas</span></div>
-      <div class="step-row"><span class="step-num serif">03</span><span class="step-title">Sesión guiada de 20 a 60 minutos, relajada y a ritmo de niños</span></div>
+      <div class="step-row"><span class="step-num serif">03</span><span class="step-title">Sesión guiada de 30 o 45 minutos, relajada y a ritmo de niños</span></div>
       <div class="step-row"><span class="step-num serif">04</span><span class="step-title">Seleccionas tus fotos favoritas de la galería en línea</span></div>
       <div class="step-row"><span class="step-num serif">05</span><span class="step-title">Edición profesional de cada foto elegida</span></div>
       <div class="step-row"><span class="step-num serif">06</span><span class="step-title">Entrega digital, tarjetas e impresas a tiempo para la Navidad</span></div>
@@ -262,37 +270,48 @@
       </div>
     </div>
 
+    <div class="gallery-head">
+      <span class="steps-eyebrow">Minis de Navidad 2025</span>
+      <h2 class="serif">Así se vieron nuestras sesiones el año pasado</h2>
+    </div>
+    <div class="gallery-grid">
+      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0869" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0869" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
+      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0456" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0456" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
+      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0486" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0486" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
+      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0621" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0621" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
+      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0464" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0464" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
+      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0493" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0493" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
+      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0609" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0609" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
+      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0636" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0636" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
+    </div>
+    <div class="note" style="text-align:center;">Fotos de las Minis de Navidad 2025 — el set y la decoración de este año serán diferentes.</div>
+
     <div class="section" style="padding-top:40px;">
-      <span class="label">Paquetes</span>
+      <span class="label">Paquetes — preventa de octubre</span>
     </div>
     <div class="cards">
       <div class="card" data-package="Mini Sesión">
+        <span class="badge">Preventa octubre</span>
         <span class="name serif">Mini Sesión</span>
-        <span class="price serif">Bs.___</span>
+        <span class="price serif">Bs.250</span>
         <hr>
-        <p>20 minutos de sesión + 10 fotos digitales editadas + galería en línea</p>
+        <p>30 minutos de sesión + 10 fotos digitales editadas + galería en línea</p>
         <a class="card-cta" href="https://wa.me/59171015521" onclick="return reservarPaquete(this)">Reservar este paquete</a>
       </div>
-      <div class="card" data-package="Familiar">
-        <span class="name serif">Familiar</span>
-        <span class="price serif">Bs.___</span>
+      <div class="card premium" data-package="Sesión Extendida">
+        <span class="badge">Preventa octubre</span>
+        <span class="name serif">Sesión Extendida</span>
+        <span class="price serif">Bs.500</span>
         <hr>
-        <p>40 minutos de sesión + 20 fotos digitales + 10 tarjetas navideñas impresas</p>
-        <a class="card-cta" href="https://wa.me/59171015521" onclick="return reservarPaquete(this)">Reservar este paquete</a>
-      </div>
-      <div class="card premium" data-package="Premium">
-        <span class="badge">Más elegido</span>
-        <span class="name serif">Premium</span>
-        <span class="price serif">Bs.___</span>
-        <hr>
-        <p>Sesión de 1 hora + fotos digitales ilimitadas + 20 tarjetas navideñas + 1 ampliación en cuadro 28x28</p>
+        <p>45 minutos de sesión + 20 fotos digitales + 10 tarjetas navideñas impresas</p>
         <a class="card-cta" href="https://wa.me/59171015521" onclick="return reservarPaquete(this)">Reservar este paquete</a>
       </div>
     </div>
 
     <div class="deposit-note">
-      <strong>Reserva de fecha:</strong> se aparta con el 70% del valor del paquete elegido. El 30% restante se paga el día de la sesión.<br>
-      Todo el servicio se realiza bajo contrato, para tu tranquilidad y la nuestra.
+      <strong>Preventa de octubre — primera oleada:</strong> estos precios (Bs.250 Mini Sesión / Bs.500 Sesión Extendida) son solo para fechas reservadas en octubre, con cupos limitados.
+      Una vez que se llenen esos cupos, el precio de la Mini Sesión sube a Bs.300, y las reservas de último momento quedan en Bs.450. Reserva ahora para asegurar el precio de preventa.<br>
+      <strong>Reserva de fecha:</strong> se aparta con el 70% del valor del paquete elegido. El 30% restante se paga el día de la sesión. Todo el servicio se realiza bajo contrato, para tu tranquilidad y la nuestra.
     </div>
 
     <div class="section" style="padding-top:40px;">
