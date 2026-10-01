@@ -326,20 +326,10 @@
     </div>
 
     <div class="package-select" id="packageSelect">
-      <p id="packageSelectText">Elige un paquete arriba para continuar con tu reserva.</p>
-      <a class="btn-select" id="packageSelectBtn" href="#" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+      <p id="packageSelectText">Elige un paquete arriba — abajo mismo puedes agendar tu fecha y hora.</p>
     </div>
 
-    <div class="deposit-note">
-      <strong>Preventa de octubre — primera oleada:</strong> estos precios (Bs.250 Mini Sesión / Bs.500 Sesión Extendida) son solo para fechas reservadas en octubre, con cupos limitados.
-      Una vez que se llenen esos cupos, el precio sube: la Mini Sesión a Bs.300 (Bs.450 en reservas de último momento) y la Sesión Extendida a Bs.650. Reserva ahora para asegurar el precio de preventa.<br>
-      <strong>Reserva de fecha:</strong> se aparta con el 70% del valor del paquete elegido. El 30% restante se paga el día de la sesión. Todo el servicio se realiza bajo contrato, para tu tranquilidad y la nuestra.
-    </div>
-
-    <div class="section" style="padding-top:40px;">
-      <span class="label">Elige tu fecha</span>
-    </div>
-    <div class="calendar-embed">
+    <div class="calendar-embed" id="calendarSection">
       <!-- Cal inline embed code begins -->
       <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-minis-navidenas"></div>
       <script type="text/javascript">
@@ -357,6 +347,13 @@
         Cal.ns["minis-navidenas"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
       </script>
       <!-- Cal inline embed code ends -->
+    </div>
+    <div class="note" style="text-align:center;">En el calendario, elige la duración que corresponda a tu paquete: 30 min para Mini Sesión, 45 min para Sesión Extendida.</div>
+
+    <div class="deposit-note">
+      <strong>Preventa de octubre — primera oleada:</strong> estos precios (Bs.250 Mini Sesión / Bs.500 Sesión Extendida) son solo para fechas reservadas en octubre, con cupos limitados.
+      Una vez que se llenen esos cupos, el precio sube: la Mini Sesión a Bs.300 (Bs.450 en reservas de último momento) y la Sesión Extendida a Bs.650. Reserva ahora para asegurar el precio de preventa.<br>
+      <strong>Reserva de fecha:</strong> se aparta con el 70% del valor del paquete elegido. El 30% restante se paga el día de la sesión. Todo el servicio se realiza bajo contrato, para tu tranquilidad y la nuestra.
     </div>
 
     <div class="section" style="padding-top:40px;">
@@ -433,6 +430,7 @@
       var card = btn.closest('.card');
       var nombre = card.getAttribute('data-package');
       var precio = card.querySelector('.price').textContent.trim();
+      var duracion = nombre === 'Mini Sesión' ? '30 min' : '45 min';
 
       document.querySelectorAll('.card').forEach(function (c) {
         c.classList.remove('selected');
@@ -443,13 +441,10 @@
       btn.classList.add('selected');
       btn.textContent = 'Seleccionado ✓';
 
-      var mensaje = 'Hola! Quiero reservar el paquete ' + nombre + ' (' + precio + ') de Sesiones de Navidad.';
-      var link = document.getElementById('packageSelectBtn');
-      link.href = 'https://wa.me/59171015521?text=' + encodeURIComponent(mensaje);
-      link.style.display = 'inline-block';
-      document.getElementById('packageSelectText').textContent = 'Paquete seleccionado: ' + nombre + ' (' + precio + ')';
+      document.getElementById('packageSelectText').textContent =
+        'Paquete seleccionado: ' + nombre + ' (' + precio + ') — elige la duración de ' + duracion + ' en el calendario de abajo para reservar tu fecha.';
 
-      document.getElementById('packageSelect').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      document.getElementById('calendarSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   </script>
 </body>
