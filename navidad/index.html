@@ -129,8 +129,14 @@
   .card.premium .price { color: var(--gold); }
   .card.premium hr { background: rgba(250,248,243,0.2); }
   .badge { position: absolute; top: -13px; left: 20px; background: var(--gold); color: var(--night); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; }
-  .card-cta { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; background: var(--gold); color: var(--night); text-decoration: none; font-weight: 700; font-size: 12.5px; letter-spacing: 0.5px; text-transform: uppercase; padding: 12px 16px; border-radius: 4px; text-align: center; }
+  .card-cta { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; background: var(--gold); color: var(--night); border: none; cursor: pointer; font-family: inherit; text-decoration: none; font-weight: 700; font-size: 12.5px; letter-spacing: 0.5px; text-transform: uppercase; padding: 12px 16px; border-radius: 4px; text-align: center; }
   .card-cta:hover { background: var(--gold-soft); }
+  .card.selected { outline: 3px solid var(--maroon); outline-offset: -1px; }
+  .card-cta.selected { background: var(--maroon); color: #fff; }
+  .package-select { margin: 22px 24px 0; padding: 22px 24px; border-radius: 6px; background: var(--night); color: var(--cream); text-align: center; }
+  .package-select p { margin: 0 0 14px; font-size: 15px; }
+  .package-select a.btn-select { display: none; background: var(--gold); color: var(--night); text-decoration: none; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; text-transform: uppercase; padding: 14px 28px; border-radius: 2px; }
+  .package-select a.btn-select:hover { background: var(--gold-soft); }
   .deposit-note { margin: 22px 24px 0; padding: 20px 24px; border: 1.5px solid var(--gold); border-radius: 6px; background: #fff; font-size: 14px; color: var(--ink); line-height: 1.6; }
   .deposit-note strong { color: var(--maroon); }
 
@@ -303,7 +309,7 @@
         <span class="price serif">Bs.250</span>
         <hr>
         <p>30 minutos de sesión + 10 fotos digitales editadas + galería en línea</p>
-        <a class="card-cta" href="https://wa.me/59171015521" onclick="return reservarPaquete(this)">Reservar este paquete</a>
+        <button type="button" class="card-cta" onclick="seleccionarPaquete(this)">Elegir este paquete</button>
       </div>
       <div class="card premium" data-package="Sesión Extendida">
         <span class="badge">Preventa octubre</span>
@@ -311,8 +317,13 @@
         <span class="price serif">Bs.500</span>
         <hr>
         <p>45 minutos de sesión + 20 fotos digitales editadas + galería en línea</p>
-        <a class="card-cta" href="https://wa.me/59171015521" onclick="return reservarPaquete(this)">Reservar este paquete</a>
+        <button type="button" class="card-cta" onclick="seleccionarPaquete(this)">Elegir este paquete</button>
       </div>
+    </div>
+
+    <div class="package-select" id="packageSelect">
+      <p id="packageSelectText">Elige un paquete arriba para continuar con tu reserva.</p>
+      <a class="btn-select" id="packageSelectBtn" href="#" target="_blank" rel="noopener">Reservar por WhatsApp</a>
     </div>
 
     <div class="deposit-note">
@@ -392,13 +403,27 @@
   </div>
 
   <script>
-    function reservarPaquete(el) {
-      var card = el.closest('.card');
+    function seleccionarPaquete(btn) {
+      var card = btn.closest('.card');
       var nombre = card.getAttribute('data-package');
       var precio = card.querySelector('.price').textContent.trim();
+
+      document.querySelectorAll('.card').forEach(function (c) {
+        c.classList.remove('selected');
+        c.querySelector('.card-cta').classList.remove('selected');
+        c.querySelector('.card-cta').textContent = 'Elegir este paquete';
+      });
+      card.classList.add('selected');
+      btn.classList.add('selected');
+      btn.textContent = 'Seleccionado ✓';
+
       var mensaje = 'Hola! Quiero reservar el paquete ' + nombre + ' (' + precio + ') de Sesiones de Navidad.';
-      window.open('https://wa.me/59171015521?text=' + encodeURIComponent(mensaje), '_blank', 'noopener');
-      return false;
+      var link = document.getElementById('packageSelectBtn');
+      link.href = 'https://wa.me/59171015521?text=' + encodeURIComponent(mensaje);
+      link.style.display = 'inline-block';
+      document.getElementById('packageSelectText').textContent = 'Paquete seleccionado: ' + nombre + ' (' + precio + ')';
+
+      document.getElementById('packageSelect').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   </script>
 </body>
