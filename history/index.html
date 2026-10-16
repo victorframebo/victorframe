@@ -127,7 +127,7 @@ form{display:grid;gap:.9rem}
 label{font-size:.72rem;color:var(--soft);display:grid;gap:.3rem}
 input,textarea,select{font:inherit;font-size:.9rem;color:#fff;background:transparent;border:0;border-bottom:1px solid #4a4b53;padding:.5em 0;width:100%;border-radius:0;color-scheme:dark}
 select option{background:var(--dark)}
-.note{display:none;font-size:.8rem;color:#cfd0d4}
+.clink{color:#fff;text-decoration:underline;text-underline-offset:3px}.send{display:flex;gap:.7rem;flex-wrap:wrap}.btn.line{background:none;color:#fff;border:1px solid #fff}.btn.line i{border-color:#fff}.note{display:none;font-size:.8rem;color:#cfd0d4}
 .note.show{display:block}
 .btn.submit{border:0;font:inherit;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;margin-top:.5rem}
 footer{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-block:20px;border-top:1px solid var(--line);font-size:.7rem;color:var(--soft)}
@@ -286,12 +286,12 @@ body{margin:0}img{max-width:100%}
     <div>
       <h2>Cuéntame qué historia necesita ser vista.</h2>
       <p class="tiny">Escríbeme con una idea de tu proyecto, fechas y presupuesto aproximado.</p>
-      <p class="tiny" style="margin-top:1.5rem">hola@tudominio.com<br>+00 000 000 000<br>@tuusuario</p>
+      <p class="tiny" style="margin-top:1.5rem"><a class="clink" href="mailto:victorframecontact@gmail.com">victorframecontact@gmail.com</a><br><a class="clink" href="https://wa.me/59171015521" target="_blank" rel="noopener">WhatsApp: 71015521</a><br><a class="clink" href="https://www.instagram.com/victorframeph" target="_blank" rel="noopener">@victorframeph</a></p>
     </div>
     <form id="contact">
-      <label for="nombre">Nombre<input id="nombre" name="nombre" required autocomplete="name"></label>
+      <label for="nombre">Nombre<input id="nombre" name="nombre" autocomplete="name"></label>
       
-      <label for="email">Correo electrónico<input id="email" name="email" type="email" required autocomplete="email"></label>
+      <label for="email">Correo electrónico<input id="email" name="email" type="email" autocomplete="email"></label>
       <label for="tipo">¿Qué necesitas?
         <select id="tipo" name="tipo">
           <option>Cobertura de un proyecto</option>
@@ -302,8 +302,8 @@ body{margin:0}img{max-width:100%}
         </select>
       </label>
       <label for="msg">Mensaje<textarea id="msg" name="msg" rows="3"></textarea></label>
-      <button class="btn w submit" type="submit">Enviar mensaje <i>→</i></button>
-      <p class="note" id="note" role="status">Gracias. Este formulario es una maqueta: conecta tu correo o WhatsApp antes de publicar.</p>
+      <div class="send"><button class="btn w submit" type="button" id="send-mail">Enviar por correo <i>→</i></button><button class="btn line submit" type="button" id="send-wa">Enviar por WhatsApp <i>→</i></button></div>
+      <p class="note" id="note" role="status">Escribe al menos tu nombre y tu mensaje para poder enviarlo.</p>
     </form>
   </div>
   <footer class="pad">
@@ -339,7 +339,25 @@ body{margin:0}img{max-width:100%}
   document.querySelectorAll('.ctrl button').forEach(function(b){
     b.addEventListener('click',function(){rail.scrollBy({left:(+b.dataset.dir)*rail.clientWidth*.6,behavior:'smooth'})});
   });
-  document.getElementById('contact').addEventListener('submit',function(e){e.preventDefault();document.getElementById('note').classList.add('show')});
+  var form=document.getElementById('contact'),note=document.getElementById('note');
+  function compose(){
+    var v=function(id){return(document.getElementById(id).value||'').trim()};
+    if(!v('nombre')||!v('msg')){note.classList.add('show');return null}
+    note.classList.remove('show');
+    var t='Hola Victor, soy '+v('nombre')+'.\nMe interesa: '+v('tipo')+'.\n\n'+v('msg');
+    if(v('email'))t+='\n\nMi correo: '+v('email');
+    return t;
+  }
+  document.getElementById('send-mail').addEventListener('click',function(){
+    var t=compose();if(!t)return;
+    location.href='mailto:victorframecontact@gmail.com?subject='+encodeURIComponent('Consulta desde la web')+'&body='+encodeURIComponent(t);
+  });
+  document.getElementById('send-wa').addEventListener('click',function(){
+    var t=compose();if(!t)return;
+    var u='https://wa.me/59171015521?text='+encodeURIComponent(t);
+    if(!window.open(u,'_blank'))location.href=u;
+  });
+  form.addEventListener('submit',function(e){e.preventDefault()});
 })();
 </script>
 
