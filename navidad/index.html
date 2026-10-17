@@ -146,11 +146,23 @@
 
   /* ---- gallery (año pasado) ---- */
   .gallery-head { padding: 44px 24px 6px; text-align: center; }
-  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 24px 24px 0; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 24px 24px 0; }
   .gallery-grid a { display: block; aspect-ratio: 1/1; border-radius: 6px; overflow: hidden; }
   .gallery-grid img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s ease; }
   .gallery-grid a:hover img { transform: scale(1.05); }
-  @media (max-width: 700px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+  .gallery-more { text-align: center; padding: 22px 24px 0; }
+  .gallery-more button { background: var(--night); color: var(--gold-soft); border: 1.5px solid var(--gold); border-radius: 2px; padding: 14px 30px; font-family: inherit; font-weight: 700; font-size: 13.5px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+  .gallery-more button:hover { background: var(--gold); color: var(--night); }
+  @media (max-width: 700px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-grid a:nth-child(n+7) { display: none; }
+  }
+  .gallery-modal { position: fixed; inset: 0; z-index: 1000; background: rgba(20,13,8,0.96); display: none; overflow-y: auto; padding: 64px 16px 32px; }
+  .gallery-modal.open { display: block; }
+  .gallery-modal-close { position: fixed; top: 14px; right: 18px; background: none; border: none; color: var(--cream); font-size: 36px; line-height: 1; cursor: pointer; z-index: 1001; }
+  .gallery-modal .gallery-grid { max-width: 1080px; margin: 0 auto; padding: 0; grid-template-columns: repeat(4, 1fr); }
+  .gallery-modal .gallery-grid a:nth-child(n+7) { display: block; }
+  @media (max-width: 700px) { .gallery-modal .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
   .samples { display: flex; gap: 16px; padding: 16px 24px 0; flex-wrap: wrap; }
   .sample { flex: 1 1 220px; display: flex; flex-direction: column; gap: 8px; }
   .sample-photo { width: 100%; height: 220px; border-radius: 6px; overflow: hidden; background: linear-gradient(135deg, #2E1D12, #1B120C); display: flex; align-items: center; justify-content: center; }
@@ -291,23 +303,11 @@
       <span class="steps-eyebrow">Minis de Navidad 2025</span>
       <h2 class="serif">Así se vieron nuestras sesiones el año pasado</h2>
     </div>
-    <div class="gallery-grid">
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0869" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0869" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0456" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0456" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0486" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0486" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0621" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0621" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0464" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0464" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0493" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0493" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0609" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0609" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0636" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0636" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0879" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0879" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0872" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0872" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0884" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0884" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0880" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0880" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0530" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0530" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0586" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0586" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0547" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0547" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
-      <a href="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_1200/VFR_0595" target="_blank" rel="noopener"><img src="https://res.cloudinary.com/rauzqcoj/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_0595" alt="Mini sesión de Navidad 2025" loading="lazy"></a>
+    <div class="gallery-grid" id="galleryPreview"></div>
+    <div class="gallery-more"><button type="button" onclick="abrirGaleria()">Ver galería</button></div>
+    <div class="gallery-modal" id="galleryModal" role="dialog" aria-label="Galería completa">
+      <button type="button" class="gallery-modal-close" onclick="cerrarGaleria()" aria-label="Cerrar">&times;</button>
+      <div class="gallery-grid" id="galleryAll"></div>
     </div>
     <div class="note" style="text-align:center;">Fotos de las Minis de Navidad 2025 — el set y la decoración de este año serán diferentes.</div>
 
@@ -434,6 +434,21 @@
   </div>
 
   <script>
+    var GALERIA = ['VFR_6117','VFR_0869','VFR_6121','VFR_0456','VFR_6125','VFR_0486','VFR_6138','VFR_0621','VFR_6143',
+      'VFR_6120','VFR_6128-Editar','VFR_6132','VFR_6141','VFR_6145-Editar',
+      'VFR_0464','VFR_0493','VFR_0609','VFR_0636','VFR_0879','VFR_0872','VFR_0884','VFR_0880','VFR_0530','VFR_0586','VFR_0547','VFR_0595'];
+    (function () {
+      var base = 'https://res.cloudinary.com/rauzqcoj/image/upload/';
+      function item(id) {
+        return '<a href="' + base + 'f_auto,q_auto,w_1600/' + id + '" target="_blank" rel="noopener"><img src="' +
+          base + 'f_auto,q_auto,w_500,h_500,c_fill,g_auto/' + id + '" alt="Mini sesión de Navidad 2025" loading="lazy"></a>';
+      }
+      document.getElementById('galleryPreview').innerHTML = GALERIA.slice(0, 9).map(item).join('');
+      document.getElementById('galleryAll').innerHTML = GALERIA.map(item).join('');
+    })();
+    function abrirGaleria() { document.getElementById('galleryModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function cerrarGaleria() { document.getElementById('galleryModal').classList.remove('open'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrarGaleria(); });
     function seleccionarPaquete(btn) {
       var card = btn.closest('.card');
       var nombre = card.getAttribute('data-package');
