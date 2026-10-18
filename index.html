@@ -328,6 +328,26 @@
             display:block;
       }
       .portfolio-grid img{cursor:zoom-in;}
+      .pf-group{margin:0 0 clamp(40px,6vw,72px);}
+      .pf-title{font-size:clamp(1.1rem,2vw,1.4rem);font-weight:700;margin:0 0 clamp(10px,1.5vw,16px);}
+      .portfolio-grid img{cursor:zoom-in;}
+      .pf-more{display:block;margin:clamp(16px,2.5vw,24px) auto 0;font:inherit;font-size:.95rem;padding:12px 28px;border:1px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,color .2s;}
+      .pf-more:hover{background:var(--ink);color:#fff;}
+      .pf-all{position:fixed;inset:0;z-index:900;background:var(--paper,#faf7f2);overflow-y:auto;display:none;padding:0 clamp(16px,4vw,48px) 48px;}
+      .pf-all.open{display:block;}
+      .pf-all-head{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:18px 0;background:var(--paper,#faf7f2);z-index:1;}
+      .pf-all-head h3{margin:0;font-size:1.2rem;font-weight:700;}
+      .pf-x{background:none;border:0;font-size:2rem;line-height:1;cursor:pointer;color:inherit;padding:4px 10px;}
+      .pf-all .portfolio-grid{max-width:1200px;margin:0 auto;}
+      .pf-viewer{position:fixed;inset:0;z-index:1000;background:rgba(10,9,8,.96);display:none;touch-action:pan-y;}
+      .pf-viewer.open{display:block;}
+      .pf-viewer img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .45s ease;border-radius:0;aspect-ratio:auto;padding:clamp(0px,4vw,56px);box-sizing:border-box;pointer-events:none;}
+      .pf-viewer img.on{opacity:1;}
+      .pf-viewer .pf-x{position:absolute;top:12px;right:16px;color:#fff;z-index:3;font-size:2.4rem;}
+      .pf-nav{position:absolute;top:0;bottom:0;width:18%;min-width:56px;background:none;border:0;color:#fff;font-size:2.4rem;cursor:pointer;opacity:.6;z-index:2;}
+      .pf-nav:hover{opacity:1;}
+      .pf-prev{left:0;}.pf-next{right:0;}
+      .pf-count{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#fff;opacity:.7;font-size:.85rem;z-index:2;}
       @media (max-width:780px){
             .portfolio-grid{grid-template-columns:repeat(2,1fr);}
       }
@@ -547,40 +567,45 @@
                             <div class="work-head">
                                         <h2 class="display" style="font-weight:700;">Portafolio</h2>
                             </div>
-                            <div class="portfolio-grid">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2502" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2502" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2528" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2528" alt="Sesión de pareja en exteriores">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9643" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9643" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2361" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2361" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_3062" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_3062" alt="Sesión de pareja en exteriores">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9663" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9663" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2164" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2164" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_3122" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_3122" alt="Sesión de pareja en exteriores">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9651" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9651" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2162" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2162" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2462" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2462" alt="Sesión de pareja en exteriores">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9567" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9567" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2569" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2569" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2904" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2904" alt="Sesión de pareja en exteriores">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9633" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9633" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2168" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2168" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9582" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9582" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2546" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2546" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9601" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9601" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2176" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2176" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9618" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9618" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2249" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2249" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9510" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9510" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2268" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2268" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9556" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9556" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2318" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2318" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9463" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9463" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2219" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2219" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9468" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9468" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2236" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2236" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9483" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_9483" alt="Sesión de embarazo en estudio">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2330" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2330" alt="Sesión de cumpleaños en jardín botánico">
-          <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2281" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1400/VFR_2281" alt="Sesión de cumpleaños en jardín botánico">
+                                    <div class="pf-group" id="pf-cumpleanera" data-title="Cumpleañera">
+          <h3 class="pf-title">Cumpleañera</h3>
+          <div class="portfolio-grid">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2502" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_2502" alt="Sesión de cumpleaños en jardín botánico">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2361" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_2361" alt="Sesión de cumpleaños en jardín botánico">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2164" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_2164" alt="Sesión de cumpleaños en jardín botánico">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2162" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_2162" alt="Sesión de cumpleaños en jardín botánico">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2569" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_2569" alt="Sesión de cumpleaños en jardín botánico">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2168" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_2168" alt="Sesión de cumpleaños en jardín botánico">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2546" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_2546" alt="Sesión de cumpleaños en jardín botánico">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2176" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_2176" alt="Sesión de cumpleaños en jardín botánico">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2249" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_2249" alt="Sesión de cumpleaños en jardín botánico">
+          </div>
+          <button type="button" class="pf-more" data-group="cumpleanera">Ver completo (15 fotos)</button>
+        </div>
+        <div class="pf-group" id="pf-parejas" data-title="Parejas">
+          <h3 class="pf-title">Parejas</h3>
+          <div class="portfolio-grid">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2528" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_2528" alt="Sesión de pareja en exteriores">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_3062" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_3062" alt="Sesión de pareja en exteriores">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_3122" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_3122" alt="Sesión de pareja en exteriores">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2462" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_2462" alt="Sesión de pareja en exteriores">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_2904" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_2904" alt="Sesión de pareja en exteriores">
+          </div>
+        </div>
+        <div class="pf-group" id="pf-embarazo" data-title="Embarazo">
+          <h3 class="pf-title">Embarazo</h3>
+          <div class="portfolio-grid">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9643" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_9643" alt="Sesión de embarazo en estudio">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9663" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_9663" alt="Sesión de embarazo en estudio">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9651" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_9651" alt="Sesión de embarazo en estudio">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9567" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_9567" alt="Sesión de embarazo en estudio">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9633" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_9633" alt="Sesión de embarazo en estudio">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9582" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_9582" alt="Sesión de embarazo en estudio">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9601" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_9601" alt="Sesión de embarazo en estudio">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9618" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_9618" alt="Sesión de embarazo en estudio">
+            <img loading="lazy" src="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,w_500,h_500,c_fill,g_auto/VFR_9510" data-full="https://res.cloudinary.com/o3aqr8em/image/upload/f_auto,q_auto,h_1600/VFR_9510" alt="Sesión de embarazo en estudio">
+          </div>
+          <button type="button" class="pf-more" data-group="embarazo">Ver completo (13 fotos)</button>
         </div>
                   </div>
           </section>
@@ -638,10 +663,47 @@
           <img id="lightbox-img" src="" alt="Foto ampliada">
       </div>
 
-  <script>
-document.querySelectorAll('.portfolio-grid img').forEach(function(i){i.addEventListener('click',function(){
-  document.getElementById('lightbox-img').src=i.dataset.full;document.getElementById('lightbox').classList.add('active');
-});});
+  <div class="pf-all" id="pf-all" aria-hidden="true"><div class="pf-all-head"><h3 id="pf-all-title"></h3><button type="button" class="pf-x" aria-label="Cerrar">&times;</button></div><div class="portfolio-grid" id="pf-all-grid"></div></div>
+<div class="pf-viewer" id="pf-viewer" role="dialog" aria-modal="true"><img alt=""><img alt=""><button type="button" class="pf-x" aria-label="Cerrar">&times;</button><button type="button" class="pf-nav pf-prev" aria-label="Anterior">&#8249;</button><button type="button" class="pf-nav pf-next" aria-label="Siguiente">&#8250;</button><div class="pf-count"></div></div>
+<script>
+(function(){
+  var B="https://res.cloudinary.com/o3aqr8em/image/upload/";
+  var DATA={"cumpleanera": ["VFR_2502", "VFR_2361", "VFR_2164", "VFR_2162", "VFR_2569", "VFR_2168", "VFR_2546", "VFR_2176", "VFR_2249", "VFR_2268", "VFR_2318", "VFR_2219", "VFR_2236", "VFR_2330", "VFR_2281"], "parejas": ["VFR_2528", "VFR_3062", "VFR_3122", "VFR_2462", "VFR_2904"], "embarazo": ["VFR_9643", "VFR_9663", "VFR_9651", "VFR_9567", "VFR_9633", "VFR_9582", "VFR_9601", "VFR_9618", "VFR_9510", "VFR_9556", "VFR_9463", "VFR_9468", "VFR_9483"]};
+  var ALT={"cumpleanera": "Sesión de cumpleaños en jardín botánico", "parejas": "Sesión de pareja en exteriores", "embarazo": "Sesión de embarazo en estudio"};
+  var TIT={"cumpleanera": "Cumpleañera", "parejas": "Parejas", "embarazo": "Embarazo"};
+  var all=document.getElementById('pf-all'),grid=document.getElementById('pf-all-grid'),v=document.getElementById('pf-viewer');
+  var layers=v.querySelectorAll('img'),count=v.querySelector('.pf-count');
+  var list=[],idx=0,cur=0;
+  function full(i){return B+'f_auto,q_auto,h_1600/'+i;}
+  function show(n){
+    idx=(n+list.length)%list.length;
+    var nxt=layers[1-cur];nxt.src=full(list[idx]);
+    nxt.classList.add('on');layers[cur].classList.remove('on');cur=1-cur;
+    count.textContent=(idx+1)+' / '+list.length;
+    new Image().src=full(list[(idx+1)%list.length]);
+  }
+  function openViewer(l,n){list=l;layers[0].classList.remove('on');layers[1].classList.remove('on');cur=1;v.classList.add('open');show(n);}
+  function closeViewer(){v.classList.remove('open');layers[0].classList.remove('on');layers[1].classList.remove('on');}
+  function groupOf(el){return el.closest('.pf-group')?el.closest('.pf-group').id.slice(3):all.dataset.group;}
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t.matches('.portfolio-grid img')){var g=groupOf(t);var f=t.dataset.full;var ids=DATA[g];var n=ids.findIndex(function(i){return f.slice(-i.length)===i;});openViewer(ids,Math.max(n,0));}
+    else if(t.matches('.pf-more')){var k=t.dataset.group;all.dataset.group=k;document.getElementById('pf-all-title').textContent=TIT[k];
+      grid.innerHTML=DATA[k].map(function(i){return '<img loading="lazy" src="'+B+'f_auto,q_auto,w_500,h_500,c_fill,g_auto/'+i+'" data-full="'+full(i)+'" alt="'+ALT[k]+'">';}).join('');
+      all.classList.add('open');all.scrollTop=0;document.body.style.overflow='hidden';}
+    else if(t.closest('#pf-all')&&t.matches('.pf-x')){all.classList.remove('open');document.body.style.overflow='';}
+    else if(t.closest('#pf-viewer')){if(t.matches('.pf-x'))closeViewer();else if(t.matches('.pf-prev'))show(idx-1);else if(t.matches('.pf-next'))show(idx+1);}
+  });
+  document.addEventListener('keydown',function(e){
+    if(!v.classList.contains('open')){if(e.key==='Escape'&&all.classList.contains('open')){all.classList.remove('open');document.body.style.overflow='';}return;}
+    if(e.key==='ArrowRight')show(idx+1);
+    else if(e.key==='ArrowLeft')show(idx-1);
+    else if(e.key===' '||e.key==='Escape'){e.preventDefault();closeViewer();}
+  });
+  var x0=null;
+  v.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  v.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(d)>50)show(idx+(d<0?1:-1));});
+})();
 </script>
 </body>
   </html>
